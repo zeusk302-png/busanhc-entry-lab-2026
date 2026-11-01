@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="assets/brand/busanhc-emblem.gif" type="image/gif">
+  <title>엔트리 실습 편집기 · 게임 제작실</title>
+  <link rel="stylesheet" href="https://playentry.org/lib/entry-js/dist/entry.css">
+  <link rel="stylesheet" href="https://playentry.org/lib/entry-tool/dist/entry-tool.css">
+  <link rel="stylesheet" href="https://playentry.org/lib/entry-lms/dist/assets/app.css">
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;font-family:Arial,'Malgun Gothic',sans-serif;background:#f4f6fa;color:#182333}
+    .lab-header{height:58px;display:flex;align-items:center;gap:12px;padding:0 20px;background:#101b29;color:#fff;position:relative;z-index:10}
+    .lab-header a{color:inherit;text-decoration:none}.lab-header strong{font-size:17px}.lab-badge{font-size:11px;border:1px solid #516176;padding:5px 8px;border-radius:20px;color:#ccdfec}
+    .lab-header .back{margin-left:auto;font-size:13px;color:#d6e7ee}
+    .lab-toolbar{min-height:54px;display:flex;align-items:center;gap:8px;padding:9px 16px;flex-wrap:wrap;background:#fff;border-bottom:1px solid #dce2ea;position:relative;z-index:9}
+    .lab-toolbar label{font-size:12px;font-weight:700;margin-right:3px}.lab-toolbar button,.lab-toolbar select{font:inherit;font-size:12px;min-height:34px;padding:7px 11px;border:1px solid #cbd5df;background:#fff;border-radius:6px;color:#263545;cursor:pointer}
+    .lab-toolbar button:hover{background:#edf5f3}.lab-toolbar button.primary{background:#126e59;color:#fff;border-color:#126e59}.lab-toolbar button:disabled{opacity:.45;cursor:wait}
+    .lab-toolbar .practice-label{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}#practice-mode{appearance:auto;-webkit-appearance:checkbox;width:16px;height:16px;margin:0;flex:0 0 16px}
+    #editor-status{margin-left:auto;font-size:12px;color:#486072;max-width:400px;line-height:1.5}#editor-status.error{color:#b12828}
+    #workspace{height:calc(100vh - 112px);width:100%;min-height:560px;position:relative}
+    .boot{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:12px;background:#f3f8f6;z-index:8}.boot strong{font-size:21px}.boot p{font-size:13px;color:#596b76;margin:0;line-height:1.8}
+    #workspace.entry{top:0!important}.entryContainerWorkspace{top:0!important}
+    @media(max-width:900px){.lab-header{padding:0 12px}.lab-badge{display:none}#editor-status{width:100%;max-width:none;margin:0}.lab-toolbar{min-height:92px}#workspace{height:calc(100vh - 150px)}}
+    #stage-confirm{max-width:490px;width:calc(100% - 32px);padding:28px;border:1px solid #bdcfc3;border-radius:12px;color:#203d33;background:#fff;line-height:1.8}#stage-confirm::backdrop{background:#10271dcc}#stage-confirm h2{font-size:21px;margin:0 0 14px}#stage-confirm p{font-size:14px}#stage-confirm>div{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}#stage-confirm button{font:inherit;font-size:13px;border:1px solid #a4bfae;border-radius:6px;padding:10px 14px;background:#fff;cursor:pointer}#stage-confirm #confirm-stage{background:#126e59;color:white;border-color:#126e59}
+  </style>
+  <script>window.PUBLIC_PATH_FOR_ENTRYJS='https://playentry.org/lib/entry-js/dist/';</script>
+</head>
+<body>
+  <header class="lab-header"><img src="assets/brand/busanhc-emblem.gif" alt="부산보건고등학교 교표" width="32" height="32"><strong>ENTRY / GAME LAB</strong><a class="lab-badge" href="licenses/entryjs-NOTICE.txt" target="_blank" rel="noopener">공식 오픈소스 EntryJS를 활용한 수업용 편집기</a><a class="back" href="index.html">← 실습 교재로 돌아가기</a></header>
+  <div class="lab-toolbar" aria-label="실습 프로젝트 도구">
+    <label for="project-stage">실습 단계</label>
+    <select id="project-stage" aria-label="실습 단계 선택">
+      <option value="0">00 소재만 있는 시작 파일</option><option value="1">01 방향키 이동</option>
+      <option value="2">02 적 생성과 추적</option><option value="3">03 체력과 피격</option>
+      <option value="4">04 자동 공격과 처치 수</option><option value="5">05 완성 · 60초 생존 게임</option>
+      <option value="6">06 자동 관통탄</option><option value="7">07 경험치 결정 획득</option><option value="8">08 레벨업과 능력 선택</option>
+    </select>
+    <label class="practice-label"><input id="practice-mode" type="checkbox"> 조립용 시작 파일</label>
+    <button id="load-stage" type="button" class="primary" disabled>선택한 단계 열기</button>
+    <button id="open-local" type="button" disabled>내 파일 열기</button>
+    <button id="save-ent" type="button" disabled>.ent 파일 저장</button>
+    <button id="save-json" type="button" disabled>JSON 백업</button>
+    <input id="local-project" type="file" accept=".ent,.json" hidden>
+    <input id="local-artwork" type="file" accept="image/png,image/jpeg,image/svg+xml" hidden>
+    <span id="editor-status" role="status" aria-live="polite">엔트리 편집기를 불러오는 중입니다…</span>
+  </div>
+  <dialog id="stage-confirm" aria-labelledby="stage-confirm-title"><h2 id="stage-confirm-title">지금 만든 작품을 저장했나요?</h2><p>선택한 단계의 <b>새 준비 파일</b>로 바뀝니다. 지금 만든 코드는 새 파일에 자동으로 합쳐지지 않습니다.</p><p>.ent 파일로 저장한 뒤 새 단계를 여세요.</p><div><button type="button" id="cancel-stage" autofocus>돌아가서 먼저 저장</button><button type="button" id="confirm-stage">저장했어요 · 새 준비 파일 열기</button></div></dialog>
+  <main id="workspace"><div class="boot" id="editor-boot"><strong>게임 제작실을 준비하고 있어요.</strong><p>공식 EntryJS 편집기를 불러옵니다.<br>처음 접속할 때는 조금 더 걸릴 수 있어요.</p></div></main>
+  <script src="https://playentry.org/lib/PreloadJS/lib/preloadjs-0.6.0.min.js"></script>
+  <script src="https://playentry.org/lib/EaselJS/lib/easeljs-0.8.0.min.js"></script>
+  <script src="https://playentry.org/lib/SoundJS/lib/soundjs-0.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script src="https://playentry.org/lib/jquery/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-ui-dist@1.12.1/jquery-ui.min.js"></script>
+  <script src="https://playentry.org/lib/velocity/velocity.min.js"></script>
+  <script src="https://playentry.org/lib/codemirror/lib/codemirror.js"></script>
+  <script src="https://playentry.org/lib/codemirror/addon/hint/show-hint.js"></script>
+  <script src="https://playentry.org/lib/codemirror/addon/lint/lint.js"></script>
+  <script src="https://playentry.org/lib/codemirror/addon/selection/active-line.js"></script>
+  <script src="https://playentry.org/lib/codemirror/mode/javascript/javascript.js"></script>
+  <script src="https://playentry.org/lib/codemirror/addon/hint/javascript-hint.js"></script>
+  <script src="https://playentry.org/lib/fuzzy/lib/fuzzy.js"></script>
+  <script src="https://playentry.org/lib/socket.io-client/socket.io.js"></script>
+  <script src="https://playentry.org/lib/entry-js/extern/lang/ko.js"></script>
+  <script src="https://playentry.org/lib/entry-js/extern/util/static.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://playentry.org/lib/entry-lms/dist/assets/app.js"></script>
+  <script src="https://playentry.org/lib/entry-js/extern/util/filbert.js"></script>
+  <script src="https://playentry.org/lib/entry-js/extern/util/CanvasInput.js"></script>
+  <script src="https://playentry.org/lib/entry-js/extern/util/ndgmr.Collision.js"></script>
+  <script src="https://playentry.org/lib/entry-js/extern/util/handle.js"></script>
+  <script src="https://playentry.org/lib/entry-js/extern/util/bignumber.min.js"></script>
+  <script src="https://playentry.org/lib/entry-tool/dist/entry-tool.js"></script>
+  <script src="https://playentry.org/lib/entry-paint/dist/static/js/entry-paint.js"></script>
+  <script src="https://entry-cdn.pstatic.net/external/sound/sound-editor.js?v=240130-174210"></script>
+  <script src="https://entry-cdn.pstatic.net/module/legacy-video/index.js?v=241031-202112"></script>
+  <script src="https://playentry.org/lib/entry-js/dist/entry.min.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>

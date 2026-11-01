@@ -1,0 +1,350 @@
+{
+  "name": "02 적 생성과 추적",
+  "scenes": [
+    {
+      "id": "scene1",
+      "name": "생존 게임"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player",
+      "name": "플레이어",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000170\", \"x\": 30, \"y\": 30}, {\"params\": [{\"id\": \"b000147\", \"type\": \"number\", \"params\": [\"0\"]}, {\"id\": \"b000148\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"locate_xy\", \"id\": \"b000149\"}, {\"params\": [null], \"type\": \"show\", \"id\": \"b000150\"}, {\"params\": [null], \"type\": \"erase_all_effects\", \"id\": \"b000151\"}, {\"params\": [\"running\", {\"id\": \"b000152\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"set_variable\", \"id\": \"b000153\"}, {\"params\": [\"hp\", {\"id\": \"b000154\", \"type\": \"number\", \"params\": [\"3\"]}, null], \"type\": \"set_variable\", \"id\": \"b000155\"}, {\"params\": [\"score\", {\"id\": \"b000156\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000157\"}, {\"params\": [\"time\", {\"id\": \"b000158\", \"type\": \"number\", \"params\": [\"60\"]}, null], \"type\": \"set_variable\", \"id\": \"b000159\"}, {\"params\": [\"invul\", {\"id\": \"b000160\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000161\"}, {\"params\": [\"pulse\", {\"id\": \"b000162\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000163\"}, {\"params\": [\"enemycount\", {\"id\": \"b000164\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000165\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b000166\"}, \"EQUAL\", {\"id\": \"b000167\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000168\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b000169\", \"statements\": [[{\"params\": [{\"params\": [\"39\", null], \"type\": \"is_press_some_key\", \"id\": \"b000107\"}, null], \"type\": \"_if\", \"id\": \"b000110\", \"statements\": [[{\"params\": [{\"id\": \"b000108\", \"type\": \"number\", \"params\": [\"2.5\"]}, null], \"type\": \"move_x\", \"id\": \"b000109\"}]]}, {\"params\": [{\"params\": [\"37\", null], \"type\": \"is_press_some_key\", \"id\": \"b000111\"}, null], \"type\": \"_if\", \"id\": \"b000114\", \"statements\": [[{\"params\": [{\"id\": \"b000112\", \"type\": \"number\", \"params\": [\"-2.5\"]}, null], \"type\": \"move_x\", \"id\": \"b000113\"}]]}, {\"params\": [{\"params\": [\"38\", null], \"type\": \"is_press_some_key\", \"id\": \"b000115\"}, null], \"type\": \"_if\", \"id\": \"b000118\", \"statements\": [[{\"params\": [{\"id\": \"b000116\", \"type\": \"number\", \"params\": [\"2.5\"]}, null], \"type\": \"move_y\", \"id\": \"b000117\"}]]}, {\"params\": [{\"params\": [\"40\", null], \"type\": \"is_press_some_key\", \"id\": \"b000119\"}, null], \"type\": \"_if\", \"id\": \"b000122\", \"statements\": [[{\"params\": [{\"id\": \"b000120\", \"type\": \"number\", \"params\": [\"-2.5\"]}, null], \"type\": \"move_y\", \"id\": \"b000121\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"x\"], \"type\": \"coordinate_object\", \"id\": \"b000123\"}, \"LESS\", {\"id\": \"b000124\", \"type\": \"number\", \"params\": [\"-216\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000125\"}, null], \"type\": \"_if\", \"id\": \"b000128\", \"statements\": [[{\"params\": [{\"id\": \"b000126\", \"type\": \"number\", \"params\": [\"-216\"]}, null], \"type\": \"locate_x\", \"id\": \"b000127\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"x\"], \"type\": \"coordinate_object\", \"id\": \"b000129\"}, \"GREATER\", {\"id\": \"b000130\", \"type\": \"number\", \"params\": [\"216\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000131\"}, null], \"type\": \"_if\", \"id\": \"b000134\", \"statements\": [[{\"params\": [{\"id\": \"b000132\", \"type\": \"number\", \"params\": [\"216\"]}, null], \"type\": \"locate_x\", \"id\": \"b000133\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"y\"], \"type\": \"coordinate_object\", \"id\": \"b000135\"}, \"LESS\", {\"id\": \"b000136\", \"type\": \"number\", \"params\": [\"-110\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000137\"}, null], \"type\": \"_if\", \"id\": \"b000140\", \"statements\": [[{\"params\": [{\"id\": \"b000138\", \"type\": \"number\", \"params\": [\"-110\"]}, null], \"type\": \"locate_y\", \"id\": \"b000139\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"y\"], \"type\": \"coordinate_object\", \"id\": \"b000141\"}, \"GREATER\", {\"id\": \"b000142\", \"type\": \"number\", \"params\": [\"98\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000143\"}, null], \"type\": \"_if\", \"id\": \"b000146\", \"statements\": [[{\"params\": [{\"id\": \"b000144\", \"type\": \"number\", \"params\": [\"98\"]}, null], \"type\": \"locate_y\", \"id\": \"b000145\"}]]}]]}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "playerpic",
+            "name": "플레이어",
+            "filename": "player",
+            "fileurl": "temp/assets/player.png",
+            "thumbUrl": "temp/assets/player.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "playerpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.03827751196172249,
+        "scaleY": 0.03827751196172249,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": true
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "enemy",
+      "name": "적",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000187\", \"x\": 30, \"y\": 30}, {\"params\": [null], \"type\": \"hide\", \"id\": \"b000171\"}, {\"params\": [{\"id\": \"b000172\", \"type\": \"number\", \"params\": [\"0.15\"]}, null], \"type\": \"wait_second\", \"id\": \"b000173\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b000183\"}, \"EQUAL\", {\"id\": \"b000184\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000185\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b000186\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [\"enemycount\"], \"type\": \"get_variable\", \"id\": \"b000174\"}, \"LESS\", {\"id\": \"b000175\", \"type\": \"number\", \"params\": [\"50\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000176\"}, null], \"type\": \"_if\", \"id\": \"b000180\", \"statements\": [[{\"params\": [\"self\", null], \"type\": \"create_clone\", \"id\": \"b000177\"}, {\"params\": [\"enemycount\", {\"id\": \"b000178\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"change_variable\", \"id\": \"b000179\"}]]}, {\"params\": [{\"id\": \"b000181\", \"type\": \"number\", \"params\": [\"0.85\"]}, null], \"type\": \"wait_second\", \"id\": \"b000182\"}]]}], [{\"params\": [null], \"type\": \"when_clone_start\", \"id\": \"b000237\", \"x\": 400, \"y\": 30}, {\"params\": [\"side\", {\"params\": [null, {\"id\": \"b000188\", \"type\": \"number\", \"params\": [\"0\"]}, null, {\"id\": \"b000189\", \"type\": \"number\", \"params\": [\"3\"]}, null], \"type\": \"calc_rand\", \"id\": \"b000190\"}, null], \"type\": \"set_variable\", \"id\": \"b000191\"}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b000192\"}, \"EQUAL\", {\"id\": \"b000193\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000194\"}, null], \"type\": \"_if\", \"id\": \"b000200\", \"statements\": [[{\"params\": [{\"params\": [null, {\"id\": \"b000195\", \"type\": \"number\", \"params\": [\"-215\"]}, null, {\"id\": \"b000196\", \"type\": \"number\", \"params\": [\"215\"]}, null], \"type\": \"calc_rand\", \"id\": \"b000197\"}, {\"id\": \"b000198\", \"type\": \"number\", \"params\": [\"124\"]}, null], \"type\": \"locate_xy\", \"id\": \"b000199\"}]]}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b000201\"}, \"EQUAL\", {\"id\": \"b000202\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000203\"}, null], \"type\": \"_if\", \"id\": \"b000209\", \"statements\": [[{\"params\": [{\"params\": [null, {\"id\": \"b000204\", \"type\": \"number\", \"params\": [\"-215\"]}, null, {\"id\": \"b000205\", \"type\": \"number\", \"params\": [\"215\"]}, null], \"type\": \"calc_rand\", \"id\": \"b000206\"}, {\"id\": \"b000207\", \"type\": \"number\", \"params\": [\"-124\"]}, null], \"type\": \"locate_xy\", \"id\": \"b000208\"}]]}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b000210\"}, \"EQUAL\", {\"id\": \"b000211\", \"type\": \"number\", \"params\": [\"2\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000212\"}, null], \"type\": \"_if\", \"id\": \"b000218\", \"statements\": [[{\"params\": [{\"id\": \"b000216\", \"type\": \"number\", \"params\": [\"-230\"]}, {\"params\": [null, {\"id\": \"b000213\", \"type\": \"number\", \"params\": [\"-105\"]}, null, {\"id\": \"b000214\", \"type\": \"number\", \"params\": [\"105\"]}, null], \"type\": \"calc_rand\", \"id\": \"b000215\"}, null], \"type\": \"locate_xy\", \"id\": \"b000217\"}]]}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b000219\"}, \"EQUAL\", {\"id\": \"b000220\", \"type\": \"number\", \"params\": [\"3\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000221\"}, null], \"type\": \"_if\", \"id\": \"b000227\", \"statements\": [[{\"params\": [{\"id\": \"b000225\", \"type\": \"number\", \"params\": [\"230\"]}, {\"params\": [null, {\"id\": \"b000222\", \"type\": \"number\", \"params\": [\"-105\"]}, null, {\"id\": \"b000223\", \"type\": \"number\", \"params\": [\"105\"]}, null], \"type\": \"calc_rand\", \"id\": \"b000224\"}, null], \"type\": \"locate_xy\", \"id\": \"b000226\"}]]}, {\"params\": [null], \"type\": \"show\", \"id\": \"b000228\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b000232\"}, \"EQUAL\", {\"id\": \"b000233\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000234\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b000235\", \"statements\": [[{\"params\": [\"player\", null], \"type\": \"see_angle_object\", \"id\": \"b000229\"}, {\"params\": [{\"id\": \"b000230\", \"type\": \"number\", \"params\": [\"0.8\"]}, null], \"type\": \"move_direction\", \"id\": \"b000231\"}]]}, {\"params\": [null], \"type\": \"delete_clone\", \"id\": \"b000236\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "enemypic",
+            "name": "적",
+            "filename": "enemy",
+            "fileurl": "temp/assets/enemy.png",
+            "thumbUrl": "temp/assets/enemy.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "enemypic",
+      "entity": {
+        "x": 120,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.0342902711323764,
+        "scaleY": 0.0342902711323764,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": false
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "aura",
+      "name": "자동 공격 범위",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "aurapic",
+            "name": "자동 공격 범위",
+            "filename": "aura",
+            "fileurl": "temp/assets/aura.svg",
+            "thumbUrl": "temp/assets/aura.svg",
+            "imageType": "svg",
+            "dimension": {
+              "width": 128,
+              "height": 128
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "aurapic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 64.0,
+        "regY": 64.0,
+        "scaleX": 0.8125,
+        "scaleY": 0.8125,
+        "rotation": 0,
+        "direction": 90,
+        "width": 128,
+        "height": 128,
+        "visible": false
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "crystal",
+      "name": "크리스털 소재",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000239\", \"x\": 30, \"y\": 30}, {\"params\": [null], \"type\": \"hide\", \"id\": \"b000238\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "crystalpic",
+            "name": "크리스털 소재",
+            "filename": "crystal",
+            "fileurl": "temp/assets/crystal.png",
+            "thumbUrl": "temp/assets/crystal.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "crystalpic",
+      "entity": {
+        "x": -115,
+        "y": -30,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.022328548644338118,
+        "scaleY": 0.022328548644338118,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": false
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "arena",
+      "name": "배경",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "arenapic",
+            "name": "배경",
+            "filename": "arena",
+            "fileurl": "temp/assets/arena.png",
+            "thumbUrl": "temp/assets/arena.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1672,
+              "height": 941
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "arenapic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 836.0,
+        "regY": 470.5,
+        "scaleX": 0.28708133971291866,
+        "scaleY": 0.2869287991498406,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1672,
+        "height": 941,
+        "visible": true
+      },
+      "lock": true,
+      "active": true
+    }
+  ],
+  "variables": [
+    {
+      "id": "hp",
+      "name": "체력",
+      "value": "3",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "time",
+      "name": "남은 시간",
+      "value": "60",
+      "variableType": "variable",
+      "visible": false,
+      "x": -75,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "score",
+      "name": "처치 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": 85,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "running",
+      "name": "게임 중",
+      "value": "1",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "invul",
+      "name": "무적 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "pulse",
+      "name": "공격 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "enemycount",
+      "name": "적 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "side",
+      "name": "등장 방향",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": "enemy",
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "timer",
+      "name": "초시계",
+      "value": "0",
+      "variableType": "timer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "answer",
+      "name": "대답",
+      "value": "0",
+      "variableType": "answer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    }
+  ],
+  "messages": [
+    {
+      "id": "end",
+      "name": "게임 종료"
+    }
+  ],
+  "functions": [],
+  "tables": [],
+  "speed": 60,
+  "expansionBlocks": [],
+  "aiUtilizeBlocks": [],
+  "hardwareLiteBlocks": []
+}

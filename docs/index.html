@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173a36">
+  <meta name="description" content="부산보건고 학생을 위한 엔트리 실습 교재. 블록의 원리를 익히고, 생존 게임을 만들고, 나만의 작품으로 확장합니다.">
+  <title>엔트리 게임 제작실 · 부산보건고</title>
+  <link rel="icon" href="assets/brand/busanhc-emblem.gif" type="image/gif">
+  <link rel="stylesheet" href="style.css">
+  <script src="content.js" defer></script><script src="assembly-data.js" defer></script><script src="assembly.js" defer></script><script src="game.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 이동</a>
+  <header class="topbar">
+    <a class="brand" href="#home"><img class="school-emblem" src="assets/brand/busanhc-emblem.gif" alt="부산보건고등학교 교표" width="44" height="44"><span>엔트리 <b>게임 제작실</b><small>BUSAN HEALTH HIGH SCHOOL</small></span></a>
+    <div class="top-actions"><span class="course-label">1학년 · 3교시 실습</span><a class="button small" href="https://playentry.org/ws/new" target="_blank" rel="noopener">엔트리 열기 <span aria-hidden="true">↗</span></a><button class="menu-toggle" aria-label="수업 목차 열기" aria-expanded="false">☰</button></div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-heading">COURSE INDEX <span>01—08</span></div>
+      <nav aria-label="수업 목차">
+        <a href="#home" data-nav="home"><span>00</span>오늘의 수업</a>
+        <a href="#start" data-nav="start"><span>01</span>엔트리 시작하기</a>
+        <a href="#blocks" data-nav="blocks"><span>02</span>블록의 원리</a>
+        <a href="#gameflow" data-nav="gameflow"><span>03</span>게임은 어떻게 움직일까?</a>
+        <a href="#missions" data-nav="missions"><span>04</span>미니 미션 4개</a>
+        <a href="#build" data-nav="build"><span>05</span>생존 게임 만들기</a>
+        <a href="#project" data-nav="project"><span>06</span>나만의 작품</a>
+        <a href="#assets" data-nav="assets"><span>07</span>소재·파일 받기</a>
+        <a href="#finish" data-nav="finish"><span>08</span>체험·발표·저장</a>
+      </nav>
+      <div class="side-progress"><span>내 실습 기록 <b id="progress-label">0 / 15</b></span><progress id="progress" max="15" value="0">0%</progress><p>이 브라우저에 임시 저장됩니다.<br>수업이 끝나면 기록 파일도 저장하세요.</p><button class="text-button" id="export-top">기록 파일 저장 ↓</button></div>
+      <a class="source-link" href="https://zeusk302-png.github.io/busanhc-health-ai-2026/">2학년 보건간호과 AI 제작실 →</a>
+      <a class="source-link" href="https://zeusk302-png.github.io/busanhc-it-outsourcing-2026/">IT경영과 실제 외주 사례집 →</a>
+      <a class="source-link" href="https://docs.playentry.org/" target="_blank" rel="noopener">엔트리 공식 도움말 ↗</a>
+    </aside>
+    <main id="main" tabindex="-1"></main>
+  </div>
+  <footer class="footer"><span>부산보건고 학생 실습 교재 · 엔트리 게임 제작실 · <a href="https://school.busanedu.net/busanhc.com/cm/cntnts/cntntsView.do?cntntsId=10781&amp;mi=611095" target="_blank" rel="noopener">교표 출처: 부산보건고등학교</a></span><span>개인 작품 1개 · 직접 만들고, 바꾸고, 설명하기</span></footer>
+  <dialog id="image-dialog"><button class="dialog-close" aria-label="이미지 닫기">닫기 ×</button><img alt=""><p></p></dialog>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <noscript>이 실습 교재는 JavaScript가 필요합니다. 브라우저에서 JavaScript를 활성화해 주세요.</noscript>
+</body></html>

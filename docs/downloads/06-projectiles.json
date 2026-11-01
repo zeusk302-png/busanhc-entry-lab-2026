@@ -1,0 +1,539 @@
+{
+  "name": "06 자동 관통탄",
+  "scenes": [
+    {
+      "id": "scene1",
+      "name": "생존 게임"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player",
+      "name": "플레이어",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b001252\", \"x\": 30, \"y\": 30}, {\"params\": [{\"id\": \"b001199\", \"type\": \"number\", \"params\": [\"0\"]}, {\"id\": \"b001200\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"locate_xy\", \"id\": \"b001201\"}, {\"params\": [null], \"type\": \"show\", \"id\": \"b001202\"}, {\"params\": [null], \"type\": \"erase_all_effects\", \"id\": \"b001203\"}, {\"params\": [\"running\", {\"id\": \"b001204\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"set_variable\", \"id\": \"b001205\"}, {\"params\": [\"paused\", {\"id\": \"b001206\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001207\"}, {\"params\": [\"hp\", {\"id\": \"b001208\", \"type\": \"number\", \"params\": [\"5\"]}, null], \"type\": \"set_variable\", \"id\": \"b001209\"}, {\"params\": [\"time\", {\"id\": \"b001210\", \"type\": \"number\", \"params\": [\"60\"]}, null], \"type\": \"set_variable\", \"id\": \"b001211\"}, {\"params\": [\"score\", {\"id\": \"b001212\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001213\"}, {\"params\": [\"invul\", {\"id\": \"b001214\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001215\"}, {\"params\": [\"enemycount\", {\"id\": \"b001216\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001217\"}, {\"params\": [\"bulletCount\", {\"id\": \"b001218\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001219\"}, {\"params\": [\"targetFound\", {\"id\": \"b001220\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001221\"}, {\"params\": [\"nearestDistance\", {\"id\": \"b001222\", \"type\": \"number\", \"params\": [\"99999\"]}, null], \"type\": \"set_variable\", \"id\": \"b001223\"}, {\"params\": [\"targetX\", {\"id\": \"b001224\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001225\"}, {\"params\": [\"targetY\", {\"id\": \"b001226\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001227\"}, {\"params\": [\"damage\", {\"id\": \"b001228\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"set_variable\", \"id\": \"b001229\"}, {\"params\": [\"fireGap\", {\"id\": \"b001230\", \"type\": \"number\", \"params\": [\"0.65\"]}, null], \"type\": \"set_variable\", \"id\": \"b001231\"}, {\"params\": [\"moveSpeed\", {\"id\": \"b001232\", \"type\": \"number\", \"params\": [\"2.5\"]}, null], \"type\": \"set_variable\", \"id\": \"b001233\"}, {\"params\": [\"xp\", {\"id\": \"b001234\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001235\"}, {\"params\": [\"needXp\", {\"id\": \"b001236\", \"type\": \"number\", \"params\": [\"3\"]}, null], \"type\": \"set_variable\", \"id\": \"b001237\"}, {\"params\": [\"level\", {\"id\": \"b001238\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"set_variable\", \"id\": \"b001239\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001248\"}, \"EQUAL\", {\"id\": \"b001249\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001250\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b001251\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001240\"}, \"EQUAL\", {\"id\": \"b001241\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001242\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001243\"}, \"EQUAL\", {\"id\": \"b001244\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001245\"}], \"type\": \"boolean_and_or\", \"id\": \"b001246\"}, null], \"type\": \"_if\", \"id\": \"b001247\", \"statements\": [[{\"params\": [{\"params\": [\"39\", null], \"type\": \"is_press_some_key\", \"id\": \"b001156\"}, null], \"type\": \"_if\", \"id\": \"b001158\", \"statements\": [[{\"params\": [{\"params\": [\"moveSpeed\"], \"type\": \"get_variable\", \"id\": \"b001155\"}, null], \"type\": \"move_x\", \"id\": \"b001157\"}]]}, {\"params\": [{\"params\": [\"37\", null], \"type\": \"is_press_some_key\", \"id\": \"b001162\"}, null], \"type\": \"_if\", \"id\": \"b001164\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [\"moveSpeed\"], \"type\": \"get_variable\", \"id\": \"b001159\"}, \"MULTI\", {\"id\": \"b001160\", \"type\": \"number\", \"params\": [\"-1\"]}], \"type\": \"calc_basic\", \"id\": \"b001161\"}, null], \"type\": \"move_x\", \"id\": \"b001163\"}]]}, {\"params\": [{\"params\": [\"38\", null], \"type\": \"is_press_some_key\", \"id\": \"b001166\"}, null], \"type\": \"_if\", \"id\": \"b001168\", \"statements\": [[{\"params\": [{\"params\": [\"moveSpeed\"], \"type\": \"get_variable\", \"id\": \"b001165\"}, null], \"type\": \"move_y\", \"id\": \"b001167\"}]]}, {\"params\": [{\"params\": [\"40\", null], \"type\": \"is_press_some_key\", \"id\": \"b001172\"}, null], \"type\": \"_if\", \"id\": \"b001174\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [\"moveSpeed\"], \"type\": \"get_variable\", \"id\": \"b001169\"}, \"MULTI\", {\"id\": \"b001170\", \"type\": \"number\", \"params\": [\"-1\"]}], \"type\": \"calc_basic\", \"id\": \"b001171\"}, null], \"type\": \"move_y\", \"id\": \"b001173\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"x\"], \"type\": \"coordinate_object\", \"id\": \"b001175\"}, \"LESS\", {\"id\": \"b001176\", \"type\": \"number\", \"params\": [\"-216\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001177\"}, null], \"type\": \"_if\", \"id\": \"b001180\", \"statements\": [[{\"params\": [{\"id\": \"b001178\", \"type\": \"number\", \"params\": [\"-216\"]}, null], \"type\": \"locate_x\", \"id\": \"b001179\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"x\"], \"type\": \"coordinate_object\", \"id\": \"b001181\"}, \"GREATER\", {\"id\": \"b001182\", \"type\": \"number\", \"params\": [\"216\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001183\"}, null], \"type\": \"_if\", \"id\": \"b001186\", \"statements\": [[{\"params\": [{\"id\": \"b001184\", \"type\": \"number\", \"params\": [\"216\"]}, null], \"type\": \"locate_x\", \"id\": \"b001185\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"y\"], \"type\": \"coordinate_object\", \"id\": \"b001187\"}, \"LESS\", {\"id\": \"b001188\", \"type\": \"number\", \"params\": [\"-110\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001189\"}, null], \"type\": \"_if\", \"id\": \"b001192\", \"statements\": [[{\"params\": [{\"id\": \"b001190\", \"type\": \"number\", \"params\": [\"-110\"]}, null], \"type\": \"locate_y\", \"id\": \"b001191\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"y\"], \"type\": \"coordinate_object\", \"id\": \"b001193\"}, \"GREATER\", {\"id\": \"b001194\", \"type\": \"number\", \"params\": [\"98\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001195\"}, null], \"type\": \"_if\", \"id\": \"b001198\", \"statements\": [[{\"params\": [{\"id\": \"b001196\", \"type\": \"number\", \"params\": [\"98\"]}, null], \"type\": \"locate_y\", \"id\": \"b001197\"}]]}]]}]]}], [{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b001280\", \"x\": 650, \"y\": 30}, {\"params\": [{\"id\": \"b001253\", \"type\": \"number\", \"params\": [\"0.05\"]}, null], \"type\": \"wait_second\", \"id\": \"b001254\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001276\"}, \"EQUAL\", {\"id\": \"b001277\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001278\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b001279\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001255\"}, \"EQUAL\", {\"id\": \"b001256\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001257\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001258\"}, \"EQUAL\", {\"id\": \"b001259\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001260\"}], \"type\": \"boolean_and_or\", \"id\": \"b001261\"}, null], \"type\": \"_if\", \"id\": \"b001275\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [\"invul\"], \"type\": \"get_variable\", \"id\": \"b001262\"}, \"GREATER\", {\"id\": \"b001263\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001264\"}, null], \"type\": \"_if\", \"id\": \"b001269\", \"statements\": [[{\"params\": [\"transparency\", {\"id\": \"b001265\", \"type\": \"number\", \"params\": [\"55\"]}, null], \"type\": \"change_effect_amount\", \"id\": \"b001266\"}, {\"params\": [\"invul\", {\"id\": \"b001267\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001268\"}]]}, {\"params\": [{\"params\": [{\"params\": [\"invul\"], \"type\": \"get_variable\", \"id\": \"b001270\"}, \"EQUAL\", {\"id\": \"b001271\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001272\"}, null], \"type\": \"_if\", \"id\": \"b001274\", \"statements\": [[{\"params\": [null], \"type\": \"erase_all_effects\", \"id\": \"b001273\"}]]}]]}]]}], [{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b001306\", \"x\": 1150, \"y\": 30}, {\"params\": [{\"id\": \"b001281\", \"type\": \"number\", \"params\": [\"0.05\"]}, null], \"type\": \"wait_second\", \"id\": \"b001282\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001302\"}, \"EQUAL\", {\"id\": \"b001303\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001304\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b001305\", \"statements\": [[{\"params\": [{\"id\": \"b001283\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"wait_second\", \"id\": \"b001284\"}, {\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001285\"}, \"EQUAL\", {\"id\": \"b001286\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001287\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001288\"}, \"EQUAL\", {\"id\": \"b001289\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001290\"}], \"type\": \"boolean_and_or\", \"id\": \"b001291\"}, null], \"type\": \"_if\", \"id\": \"b001301\", \"statements\": [[{\"params\": [\"time\", {\"id\": \"b001292\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001293\"}, {\"params\": [{\"params\": [{\"params\": [\"time\"], \"type\": \"get_variable\", \"id\": \"b001294\"}, \"LESS_OR_EQUAL\", {\"id\": \"b001295\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001296\"}, null], \"type\": \"_if\", \"id\": \"b001300\", \"statements\": [[{\"params\": [\"running\", {\"id\": \"b001297\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001298\"}, {\"params\": [\"end\", null], \"type\": \"message_cast\", \"id\": \"b001299\"}]]}]]}]]}], [{\"params\": [null, \"end\"], \"type\": \"when_message_cast\", \"id\": \"b001322\", \"x\": 650, \"y\": 450}, {\"params\": [\"running\", {\"id\": \"b001307\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001308\"}, {\"params\": [\"paused\", {\"id\": \"b001309\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"set_variable\", \"id\": \"b001310\"}, {\"params\": [{\"params\": [{\"params\": [\"hp\"], \"type\": \"get_variable\", \"id\": \"b001311\"}, \"LESS_OR_EQUAL\", {\"id\": \"b001312\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001313\"}, null], \"type\": \"if_else\", \"id\": \"b001318\", \"statements\": [[{\"params\": [{\"id\": \"b001314\", \"type\": \"text\", \"params\": [\"다시 도전! 정지한 뒤 시작 버튼을 눌러요.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b001315\"}], [{\"params\": [{\"id\": \"b001316\", \"type\": \"text\", \"params\": [\"60초 생존 성공! 정지한 뒤 다시 시작할 수 있어요.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b001317\"}]]}, {\"params\": [{\"id\": \"b001319\", \"type\": \"number\", \"params\": [\"0.1\"]}, null], \"type\": \"wait_second\", \"id\": \"b001320\"}, {\"params\": [\"all\", null], \"type\": \"stop_object\", \"id\": \"b001321\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "playerpic",
+            "name": "플레이어",
+            "filename": "player",
+            "fileurl": "temp/assets/player.png",
+            "thumbUrl": "temp/assets/player.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "playerpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.03827751196172249,
+        "scaleY": 0.03827751196172249,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": true
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "enemy",
+      "name": "적",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b001349\", \"x\": 30, \"y\": 30}, {\"params\": [null], \"type\": \"hide\", \"id\": \"b001323\"}, {\"params\": [\"enemyPhase\", {\"id\": \"b001324\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"set_variable\", \"id\": \"b001325\"}, {\"params\": [{\"id\": \"b001326\", \"type\": \"number\", \"params\": [\"0.15\"]}, null], \"type\": \"wait_second\", \"id\": \"b001327\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001345\"}, \"EQUAL\", {\"id\": \"b001346\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001347\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b001348\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001328\"}, \"EQUAL\", {\"id\": \"b001329\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001330\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001331\"}, \"EQUAL\", {\"id\": \"b001332\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001333\"}], \"type\": \"boolean_and_or\", \"id\": \"b001334\"}, null], \"type\": \"_if\", \"id\": \"b001342\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [\"enemycount\"], \"type\": \"get_variable\", \"id\": \"b001335\"}, \"LESS\", {\"id\": \"b001336\", \"type\": \"number\", \"params\": [\"50\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001337\"}, null], \"type\": \"_if\", \"id\": \"b001341\", \"statements\": [[{\"params\": [\"self\", null], \"type\": \"create_clone\", \"id\": \"b001338\"}, {\"params\": [\"enemycount\", {\"id\": \"b001339\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001340\"}]]}]]}, {\"params\": [{\"id\": \"b001343\", \"type\": \"number\", \"params\": [\"1.2\"]}, null], \"type\": \"wait_second\", \"id\": \"b001344\"}]]}], [{\"params\": [null, \"aim_collect\"], \"type\": \"when_message_cast\", \"id\": \"b001495\", \"x\": 950, \"y\": 30}, {\"params\": [{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001471\"}, \"EQUAL\", {\"id\": \"b001472\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001473\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001474\"}, \"EQUAL\", {\"id\": \"b001475\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001476\"}], \"type\": \"boolean_and_or\", \"id\": \"b001477\"}, \"AND\", {\"params\": [{\"params\": [{\"params\": [\"enemyPhase\"], \"type\": \"get_variable\", \"id\": \"b001478\"}, \"EQUAL\", {\"id\": \"b001479\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001480\"}, \"AND\", {\"params\": [{\"params\": [null, \"player\", null], \"type\": \"distance_something\", \"id\": \"b001481\"}, \"LESS\", {\"params\": [\"nearestDistance\"], \"type\": \"get_variable\", \"id\": \"b001482\"}], \"type\": \"boolean_basic_operator\", \"id\": \"b001483\"}], \"type\": \"boolean_and_or\", \"id\": \"b001484\"}], \"type\": \"boolean_and_or\", \"id\": \"b001485\"}, null], \"type\": \"_if\", \"id\": \"b001494\", \"statements\": [[{\"params\": [\"nearestDistance\", {\"params\": [null, \"player\", null], \"type\": \"distance_something\", \"id\": \"b001486\"}, null], \"type\": \"set_variable\", \"id\": \"b001487\"}, {\"params\": [\"targetX\", {\"params\": [null, \"self\", null, \"x\"], \"type\": \"coordinate_object\", \"id\": \"b001488\"}, null], \"type\": \"set_variable\", \"id\": \"b001489\"}, {\"params\": [\"targetY\", {\"params\": [null, \"self\", null, \"y\"], \"type\": \"coordinate_object\", \"id\": \"b001490\"}, null], \"type\": \"set_variable\", \"id\": \"b001491\"}, {\"params\": [\"targetFound\", {\"id\": \"b001492\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"set_variable\", \"id\": \"b001493\"}]]}], [{\"params\": [null], \"type\": \"when_clone_start\", \"id\": \"b001501\", \"x\": 450, \"y\": 30}, {\"params\": [\"enemyPhase\", {\"id\": \"b001350\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001351\"}, {\"params\": [\"enemyHp\", {\"id\": \"b001352\", \"type\": \"number\", \"params\": [\"2\"]}, null], \"type\": \"set_variable\", \"id\": \"b001353\"}, {\"params\": [{\"type\": \"get_pictures\", \"params\": [\"enemypic\"], \"id\": \"b001354\"}, null], \"type\": \"change_to_some_shape\", \"id\": \"b001355\"}, {\"params\": [{\"id\": \"b001356\", \"type\": \"number\", \"params\": [\"43\"]}, null], \"type\": \"set_scale_size\", \"id\": \"b001357\"}, {\"params\": [\"side\", {\"params\": [null, {\"id\": \"b001358\", \"type\": \"number\", \"params\": [\"0\"]}, null, {\"id\": \"b001359\", \"type\": \"number\", \"params\": [\"3\"]}, null], \"type\": \"calc_rand\", \"id\": \"b001360\"}, null], \"type\": \"set_variable\", \"id\": \"b001361\"}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b001362\"}, \"EQUAL\", {\"id\": \"b001363\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001364\"}, null], \"type\": \"_if\", \"id\": \"b001370\", \"statements\": [[{\"params\": [{\"params\": [null, {\"id\": \"b001365\", \"type\": \"number\", \"params\": [\"-215\"]}, null, {\"id\": \"b001366\", \"type\": \"number\", \"params\": [\"215\"]}, null], \"type\": \"calc_rand\", \"id\": \"b001367\"}, {\"id\": \"b001368\", \"type\": \"number\", \"params\": [\"124\"]}, null], \"type\": \"locate_xy\", \"id\": \"b001369\"}]]}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b001371\"}, \"EQUAL\", {\"id\": \"b001372\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001373\"}, null], \"type\": \"_if\", \"id\": \"b001379\", \"statements\": [[{\"params\": [{\"params\": [null, {\"id\": \"b001374\", \"type\": \"number\", \"params\": [\"-215\"]}, null, {\"id\": \"b001375\", \"type\": \"number\", \"params\": [\"215\"]}, null], \"type\": \"calc_rand\", \"id\": \"b001376\"}, {\"id\": \"b001377\", \"type\": \"number\", \"params\": [\"-124\"]}, null], \"type\": \"locate_xy\", \"id\": \"b001378\"}]]}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b001380\"}, \"EQUAL\", {\"id\": \"b001381\", \"type\": \"number\", \"params\": [\"2\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001382\"}, null], \"type\": \"_if\", \"id\": \"b001388\", \"statements\": [[{\"params\": [{\"id\": \"b001386\", \"type\": \"number\", \"params\": [\"-230\"]}, {\"params\": [null, {\"id\": \"b001383\", \"type\": \"number\", \"params\": [\"-105\"]}, null, {\"id\": \"b001384\", \"type\": \"number\", \"params\": [\"105\"]}, null], \"type\": \"calc_rand\", \"id\": \"b001385\"}, null], \"type\": \"locate_xy\", \"id\": \"b001387\"}]]}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b001389\"}, \"EQUAL\", {\"id\": \"b001390\", \"type\": \"number\", \"params\": [\"3\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001391\"}, null], \"type\": \"_if\", \"id\": \"b001397\", \"statements\": [[{\"params\": [{\"id\": \"b001395\", \"type\": \"number\", \"params\": [\"230\"]}, {\"params\": [null, {\"id\": \"b001392\", \"type\": \"number\", \"params\": [\"-105\"]}, null, {\"id\": \"b001393\", \"type\": \"number\", \"params\": [\"105\"]}, null], \"type\": \"calc_rand\", \"id\": \"b001394\"}, null], \"type\": \"locate_xy\", \"id\": \"b001396\"}]]}, {\"params\": [null], \"type\": \"show\", \"id\": \"b001398\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001496\"}, \"EQUAL\", {\"id\": \"b001497\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001498\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b001499\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001456\"}, \"EQUAL\", {\"id\": \"b001457\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001458\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001459\"}, \"EQUAL\", {\"id\": \"b001460\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001461\"}], \"type\": \"boolean_and_or\", \"id\": \"b001462\"}, \"AND\", {\"params\": [{\"params\": [\"enemyPhase\"], \"type\": \"get_variable\", \"id\": \"b001463\"}, \"EQUAL\", {\"id\": \"b001464\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001465\"}], \"type\": \"boolean_and_or\", \"id\": \"b001466\"}, null], \"type\": \"_if\", \"id\": \"b001470\", \"statements\": [[{\"params\": [\"player\", null], \"type\": \"see_angle_object\", \"id\": \"b001467\"}, {\"params\": [{\"id\": \"b001468\", \"type\": \"number\", \"params\": [\"0.55\"]}, null], \"type\": \"move_direction\", \"id\": \"b001469\"}, {\"params\": [{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001404\"}, \"EQUAL\", {\"id\": \"b001405\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001406\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001407\"}, \"EQUAL\", {\"id\": \"b001408\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001409\"}], \"type\": \"boolean_and_or\", \"id\": \"b001410\"}, \"AND\", {\"params\": [null, \"bullet\", null], \"type\": \"reach_something\", \"id\": \"b001411\"}], \"type\": \"boolean_and_or\", \"id\": \"b001412\"}, null], \"type\": \"_if\", \"id\": \"b001423\", \"statements\": [[{\"params\": [\"enemyHp\", {\"params\": [{\"params\": [\"damage\"], \"type\": \"get_variable\", \"id\": \"b001413\"}, \"MULTI\", {\"id\": \"b001414\", \"type\": \"number\", \"params\": [\"-1\"]}], \"type\": \"calc_basic\", \"id\": \"b001415\"}, null], \"type\": \"change_variable\", \"id\": \"b001416\"}, {\"params\": [{\"params\": [{\"params\": [\"enemyHp\"], \"type\": \"get_variable\", \"id\": \"b001417\"}, \"LESS_OR_EQUAL\", {\"id\": \"b001418\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001419\"}, null], \"type\": \"_if\", \"id\": \"b001420\", \"statements\": [[{\"params\": [\"score\", {\"id\": \"b001399\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001400\"}, {\"params\": [\"enemycount\", {\"id\": \"b001401\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001402\"}, {\"params\": [null], \"type\": \"delete_clone\", \"id\": \"b001403\"}]]}, {\"params\": [{\"id\": \"b001421\", \"type\": \"number\", \"params\": [\"0.15\"]}, null], \"type\": \"wait_second\", \"id\": \"b001422\"}]]}, {\"params\": [{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001424\"}, \"EQUAL\", {\"id\": \"b001425\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001426\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001427\"}, \"EQUAL\", {\"id\": \"b001428\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001429\"}], \"type\": \"boolean_and_or\", \"id\": \"b001430\"}, \"AND\", {\"params\": [{\"params\": [{\"params\": [\"enemyPhase\"], \"type\": \"get_variable\", \"id\": \"b001431\"}, \"EQUAL\", {\"id\": \"b001432\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001433\"}, \"AND\", {\"params\": [{\"params\": [null, \"player\", null], \"type\": \"reach_something\", \"id\": \"b001434\"}, \"AND\", {\"params\": [{\"params\": [\"invul\"], \"type\": \"get_variable\", \"id\": \"b001435\"}, \"EQUAL\", {\"id\": \"b001436\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001437\"}], \"type\": \"boolean_and_or\", \"id\": \"b001438\"}], \"type\": \"boolean_and_or\", \"id\": \"b001439\"}], \"type\": \"boolean_and_or\", \"id\": \"b001440\"}, null], \"type\": \"_if\", \"id\": \"b001455\", \"statements\": [[{\"params\": [\"invul\", {\"id\": \"b001441\", \"type\": \"number\", \"params\": [\"60\"]}, null], \"type\": \"set_variable\", \"id\": \"b001442\"}, {\"params\": [\"hp\", {\"id\": \"b001443\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001444\"}, {\"params\": [\"enemycount\", {\"id\": \"b001445\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001446\"}, {\"params\": [{\"params\": [{\"params\": [\"hp\"], \"type\": \"get_variable\", \"id\": \"b001447\"}, \"LESS_OR_EQUAL\", {\"id\": \"b001448\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001449\"}, null], \"type\": \"_if\", \"id\": \"b001453\", \"statements\": [[{\"params\": [\"running\", {\"id\": \"b001450\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001451\"}, {\"params\": [\"end\", null], \"type\": \"message_cast\", \"id\": \"b001452\"}]]}, {\"params\": [null], \"type\": \"delete_clone\", \"id\": \"b001454\"}]]}]]}]]}, {\"params\": [null], \"type\": \"delete_clone\", \"id\": \"b001500\"}], [{\"params\": [null, \"end\"], \"type\": \"when_message_cast\", \"id\": \"b001503\", \"x\": 450, \"y\": 1450}, {\"params\": [null], \"type\": \"remove_all_clones\", \"id\": \"b001502\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "enemypic",
+            "name": "적",
+            "filename": "enemy",
+            "fileurl": "temp/assets/enemy.png",
+            "thumbUrl": "temp/assets/enemy.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "enemypic",
+      "entity": {
+        "x": 120,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.0342902711323764,
+        "scaleY": 0.0342902711323764,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": false
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "bullet",
+      "name": "자동 관통탄",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b001554\", \"x\": 30, \"y\": 30}, {\"params\": [null], \"type\": \"hide\", \"id\": \"b001504\"}, {\"params\": [{\"id\": \"b001505\", \"type\": \"number\", \"params\": [\"0.2\"]}, null], \"type\": \"wait_second\", \"id\": \"b001506\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001550\"}, \"EQUAL\", {\"id\": \"b001551\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001552\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b001553\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001507\"}, \"EQUAL\", {\"id\": \"b001508\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001509\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001510\"}, \"EQUAL\", {\"id\": \"b001511\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001512\"}], \"type\": \"boolean_and_or\", \"id\": \"b001513\"}, null], \"type\": \"_if\", \"id\": \"b001547\", \"statements\": [[{\"params\": [\"targetFound\", {\"id\": \"b001514\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001515\"}, {\"params\": [\"nearestDistance\", {\"id\": \"b001516\", \"type\": \"number\", \"params\": [\"99999\"]}, null], \"type\": \"set_variable\", \"id\": \"b001517\"}, {\"params\": [\"aim_collect\", null], \"type\": \"message_cast_wait\", \"id\": \"b001518\"}, {\"params\": [{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001519\"}, \"EQUAL\", {\"id\": \"b001520\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001521\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001522\"}, \"EQUAL\", {\"id\": \"b001523\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001524\"}], \"type\": \"boolean_and_or\", \"id\": \"b001525\"}, \"AND\", {\"params\": [{\"params\": [\"targetFound\"], \"type\": \"get_variable\", \"id\": \"b001526\"}, \"EQUAL\", {\"id\": \"b001527\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001528\"}], \"type\": \"boolean_and_or\", \"id\": \"b001529\"}, null], \"type\": \"_if\", \"id\": \"b001546\", \"statements\": [[{\"params\": [\"aim_move\", null], \"type\": \"message_cast_wait\", \"id\": \"b001530\"}, {\"params\": [{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001531\"}, \"EQUAL\", {\"id\": \"b001532\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001533\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001534\"}, \"EQUAL\", {\"id\": \"b001535\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001536\"}], \"type\": \"boolean_and_or\", \"id\": \"b001537\"}, \"AND\", {\"params\": [{\"params\": [\"bulletCount\"], \"type\": \"get_variable\", \"id\": \"b001538\"}, \"LESS\", {\"id\": \"b001539\", \"type\": \"number\", \"params\": [\"40\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001540\"}], \"type\": \"boolean_and_or\", \"id\": \"b001541\"}, null], \"type\": \"_if\", \"id\": \"b001545\", \"statements\": [[{\"params\": [\"self\", null], \"type\": \"create_clone\", \"id\": \"b001542\"}, {\"params\": [\"bulletCount\", {\"id\": \"b001543\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001544\"}]]}]]}]]}, {\"params\": [{\"params\": [\"fireGap\"], \"type\": \"get_variable\", \"id\": \"b001548\"}, null], \"type\": \"wait_second\", \"id\": \"b001549\"}]]}], [{\"params\": [null], \"type\": \"when_clone_start\", \"id\": \"b001602\", \"x\": 450, \"y\": 30}, {\"params\": [\"player\", null], \"type\": \"locate\", \"id\": \"b001570\"}, {\"params\": [\"aim\", null], \"type\": \"see_angle_object\", \"id\": \"b001571\"}, {\"params\": [\"bulletAge\", {\"id\": \"b001572\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b001573\"}, {\"params\": [null], \"type\": \"show\", \"id\": \"b001574\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001595\"}, \"EQUAL\", {\"id\": \"b001596\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001597\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b001598\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b001575\"}, \"EQUAL\", {\"id\": \"b001576\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001577\"}, \"AND\", {\"params\": [{\"params\": [\"paused\"], \"type\": \"get_variable\", \"id\": \"b001578\"}, \"EQUAL\", {\"id\": \"b001579\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001580\"}], \"type\": \"boolean_and_or\", \"id\": \"b001581\"}, null], \"type\": \"_if\", \"id\": \"b001594\", \"statements\": [[{\"params\": [{\"id\": \"b001582\", \"type\": \"number\", \"params\": [\"7\"]}, null], \"type\": \"move_direction\", \"id\": \"b001583\"}, {\"params\": [\"bulletAge\", {\"id\": \"b001584\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001585\"}, {\"params\": [{\"params\": [{\"params\": [{\"params\": [\"bulletAge\"], \"type\": \"get_variable\", \"id\": \"b001586\"}, \"GREATER_OR_EQUAL\", {\"id\": \"b001587\", \"type\": \"number\", \"params\": [\"75\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001588\"}, \"OR\", {\"params\": [{\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"x\"], \"type\": \"coordinate_object\", \"id\": \"b001555\"}, \"GREATER\", {\"id\": \"b001556\", \"type\": \"number\", \"params\": [\"250\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001557\"}, \"OR\", {\"params\": [{\"params\": [null, \"self\", null, \"x\"], \"type\": \"coordinate_object\", \"id\": \"b001558\"}, \"LESS\", {\"id\": \"b001559\", \"type\": \"number\", \"params\": [\"-250\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001560\"}], \"type\": \"boolean_and_or\", \"id\": \"b001561\"}, \"OR\", {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"y\"], \"type\": \"coordinate_object\", \"id\": \"b001562\"}, \"GREATER\", {\"id\": \"b001563\", \"type\": \"number\", \"params\": [\"145\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001564\"}, \"OR\", {\"params\": [{\"params\": [null, \"self\", null, \"y\"], \"type\": \"coordinate_object\", \"id\": \"b001565\"}, \"LESS\", {\"id\": \"b001566\", \"type\": \"number\", \"params\": [\"-145\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b001567\"}], \"type\": \"boolean_and_or\", \"id\": \"b001568\"}], \"type\": \"boolean_and_or\", \"id\": \"b001569\"}], \"type\": \"boolean_and_or\", \"id\": \"b001589\"}, null], \"type\": \"_if\", \"id\": \"b001593\", \"statements\": [[{\"params\": [\"bulletCount\", {\"id\": \"b001590\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001591\"}, {\"params\": [null], \"type\": \"delete_clone\", \"id\": \"b001592\"}]]}]]}]]}, {\"params\": [\"bulletCount\", {\"id\": \"b001599\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"change_variable\", \"id\": \"b001600\"}, {\"params\": [null], \"type\": \"delete_clone\", \"id\": \"b001601\"}], [{\"params\": [null, \"end\"], \"type\": \"when_message_cast\", \"id\": \"b001604\", \"x\": 450, \"y\": 750}, {\"params\": [null], \"type\": \"remove_all_clones\", \"id\": \"b001603\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "bulletpic",
+            "name": "자동 관통탄",
+            "filename": "bullet",
+            "fileurl": "temp/assets/bullet.png",
+            "thumbUrl": "temp/assets/bullet.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 128,
+              "height": 128
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "bulletpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 64.0,
+        "regY": 64.0,
+        "scaleX": 0.09375,
+        "scaleY": 0.09375,
+        "rotation": 0,
+        "direction": 90,
+        "width": 128,
+        "height": 128,
+        "visible": false
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "aim",
+      "name": "조준점 (가장 가까운 적)",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b001606\", \"x\": 30, \"y\": 30}, {\"params\": [null], \"type\": \"hide\", \"id\": \"b001605\"}], [{\"params\": [null, \"aim_move\"], \"type\": \"when_message_cast\", \"id\": \"b001610\", \"x\": 400, \"y\": 30}, {\"params\": [{\"params\": [\"targetX\"], \"type\": \"get_variable\", \"id\": \"b001607\"}, {\"params\": [\"targetY\"], \"type\": \"get_variable\", \"id\": \"b001608\"}, null], \"type\": \"locate_xy\", \"id\": \"b001609\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "aimpic",
+            "name": "조준점 (가장 가까운 적)",
+            "filename": "aim",
+            "fileurl": "temp/assets/aim.png",
+            "thumbUrl": "temp/assets/aim.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1,
+              "height": 1
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "aimpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 0.5,
+        "regY": 0.5,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1,
+        "height": 1,
+        "visible": false
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "arena",
+      "name": "배경",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "arenapic",
+            "name": "배경",
+            "filename": "arena",
+            "fileurl": "temp/assets/arena.png",
+            "thumbUrl": "temp/assets/arena.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1672,
+              "height": 941
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "arenapic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 836.0,
+        "regY": 470.5,
+        "scaleX": 0.28708133971291866,
+        "scaleY": 0.2869287991498406,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1672,
+        "height": 941,
+        "visible": true
+      },
+      "lock": true,
+      "active": true
+    }
+  ],
+  "variables": [
+    {
+      "id": "hp",
+      "name": "체력",
+      "value": "5",
+      "variableType": "variable",
+      "visible": true,
+      "x": -225,
+      "y": -125,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "time",
+      "name": "남은 시간",
+      "value": "60",
+      "variableType": "variable",
+      "visible": true,
+      "x": -70,
+      "y": -125,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "score",
+      "name": "처치 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": true,
+      "x": 85,
+      "y": -125,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "xp",
+      "name": "경험치",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": -97,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "level",
+      "name": "레벨",
+      "value": "1",
+      "variableType": "variable",
+      "visible": false,
+      "x": -70,
+      "y": -97,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "needXp",
+      "name": "필요 경험치",
+      "value": "3",
+      "variableType": "variable",
+      "visible": false,
+      "x": 85,
+      "y": -97,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "damage",
+      "name": "공격력",
+      "value": "1",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": -69,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "fireGap",
+      "name": "발사 간격",
+      "value": "0.65",
+      "variableType": "variable",
+      "visible": false,
+      "x": -70,
+      "y": -69,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "moveSpeed",
+      "name": "이동 속도",
+      "value": "2.5",
+      "variableType": "variable",
+      "visible": false,
+      "x": 85,
+      "y": -69,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "running",
+      "name": "게임 중",
+      "value": "1",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "paused",
+      "name": "레벨업 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "invul",
+      "name": "무적 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "enemycount",
+      "name": "적 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "bulletCount",
+      "name": "탄 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "targetFound",
+      "name": "조준 대상 있음",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "nearestDistance",
+      "name": "가장 가까운 거리",
+      "value": "99999",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "targetX",
+      "name": "조준 대상 X",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "targetY",
+      "name": "조준 대상 Y",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "side",
+      "name": "등장 방향",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": "enemy",
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "enemyHp",
+      "name": "개별 체력",
+      "value": "2",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": "enemy",
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "enemyPhase",
+      "name": "개별 상태",
+      "value": "-1",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": "enemy",
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "bulletAge",
+      "name": "탄 수명",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": "bullet",
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "timer",
+      "name": "초시계",
+      "value": "0",
+      "variableType": "timer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "answer",
+      "name": "대답",
+      "value": "0",
+      "variableType": "answer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    }
+  ],
+  "messages": [
+    {
+      "id": "end",
+      "name": "게임 종료"
+    },
+    {
+      "id": "levelup",
+      "name": "레벨업"
+    },
+    {
+      "id": "chosen",
+      "name": "능력 선택 완료"
+    },
+    {
+      "id": "aim_collect",
+      "name": "조준 후보 수집"
+    },
+    {
+      "id": "aim_move",
+      "name": "조준점 이동"
+    }
+  ],
+  "functions": [],
+  "tables": [],
+  "speed": 60,
+  "expansionBlocks": [],
+  "aiUtilizeBlocks": [],
+  "hardwareLiteBlocks": [],
+  "interface": {
+    "object": "player",
+    "canvasWidth": 400,
+    "menuWidth": 264
+  }
+}

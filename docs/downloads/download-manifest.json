@@ -1,0 +1,187 @@
+[
+  {
+    "file": "00-starter.ent",
+    "bytes": 3915574,
+    "sha256": "592b6d3ea40bd75e7763745702b9f57a151ebc468c58055542f6f21e159efa81"
+  },
+  {
+    "file": "00-starter.json",
+    "bytes": 7991,
+    "sha256": "a2c9144463bf8dd935f36a0226af017a21b794b6735f3f7ee4b7ee823923722a"
+  },
+  {
+    "file": "01-movement.ent",
+    "bytes": 3916239,
+    "sha256": "0f9e662baacdc35cd445cc183efffc7a5c920f16776f7481e7c9a5be496f4dfa"
+  },
+  {
+    "file": "01-movement.json",
+    "bytes": 13061,
+    "sha256": "81b3a69b366587be3528e2208d7a73d60d16b42ce72f909637f60ebaf4602514"
+  },
+  {
+    "file": "02-enemies.ent",
+    "bytes": 3916758,
+    "sha256": "6223b981005617ccc65029c64fff2e2ffe53aaebe30d21212bfcd4839b051652"
+  },
+  {
+    "file": "02-enemies.json",
+    "bytes": 18139,
+    "sha256": "ba9fa1d5bc8c05db9779a18f123c2fc72f41461d2407763f97df79f918d724a7"
+  },
+  {
+    "file": "03-health.ent",
+    "bytes": 3917279,
+    "sha256": "a4955ef646b45ee452a0d2d1b107d6c46831055b24f3b4797cd1af812179b6bd"
+  },
+  {
+    "file": "03-health.json",
+    "bytes": 22485,
+    "sha256": "53a9ef2b78ba2cada3b94d479b262fc7fa0b5f1dc4379c635d2932946ab1c9f7"
+  },
+  {
+    "file": "04-attack.ent",
+    "bytes": 3917565,
+    "sha256": "f1c1dc5ad5d923331cf32ebea1f84b63e1d28dadc01e896166f7196f198d7ea5"
+  },
+  {
+    "file": "04-attack.json",
+    "bytes": 25679,
+    "sha256": "bc2df08d2a1eea163f4ec3c5ad68f7557834c415a55186a91f7839b5742a67b2"
+  },
+  {
+    "file": "05-survivor.ent",
+    "bytes": 3917711,
+    "sha256": "4f01564e3e3f95343e50001b281a1344cb01d374e095cefe106987b8e424f615"
+  },
+  {
+    "file": "05-survivor.json",
+    "bytes": 27398,
+    "sha256": "6aaf2fb9c067e32450c7d531c9994290cb32eeeba7e3de32cf2c481579da131c"
+  },
+  {
+    "file": "06-projectiles.ent",
+    "bytes": 3563728,
+    "sha256": "97441d9e704dfb9d4582feb445a0668daa3481ff88483b9e76555552a926192f"
+  },
+  {
+    "file": "06-projectiles.json",
+    "bytes": 47598,
+    "sha256": "2f22d8d2a9259b1bfd96ed9a4db02c122340f873f21aaf6b711faf7ccfc7906e"
+  },
+  {
+    "file": "07-experience.ent",
+    "bytes": 3910439,
+    "sha256": "d10c1f5062eaff6b6f00623dd7d5276810c43fd4359441d6d3e0338ae1f1683a"
+  },
+  {
+    "file": "07-experience.json",
+    "bytes": 49843,
+    "sha256": "53c4b192b2e7000cfb3dc0d60cf6b5ae0865eb554bae1aa88f0204c354dece5d"
+  },
+  {
+    "file": "08-upgrades.ent",
+    "bytes": 3911416,
+    "sha256": "73b05f43e6e21388d5dc8a27efaaffd11331437a1b67a593d30d1237e515e47e"
+  },
+  {
+    "file": "08-upgrades.json",
+    "bytes": 57709,
+    "sha256": "adc5cb88742287ff4e9cd8384a43f12c17893a4171d208ff7cf60adc907a127c"
+  },
+  {
+    "file": "entry-assets.zip",
+    "bytes": 4459336,
+    "sha256": "64c54060c123fbc97d0db87e7afd49e13d07f2598910f1aedb60d1e0db0b084e"
+  },
+  {
+    "file": "entry-checkpoints.zip",
+    "bytes": 7829961,
+    "sha256": "56e9c777ddbe71337343c9fd2769a3cf8e2f5d166195899f2b40b03098e1f788"
+  },
+  {
+    "file": "entry-projects.json",
+    "bytes": 911,
+    "sha256": "2c9df35d26f0faa324aeee8e8bc602122ada511089c78b2df8081f48bed3a6e0"
+  },
+  {
+    "file": "practice/01-movement-practice.ent",
+    "bytes": 3916178,
+    "sha256": "14cf96fc5908383e9df96210cfa3f8daeed6c48e037e6ff5b09ecebc8d5d1627"
+  },
+  {
+    "file": "practice/01-movement-practice.json",
+    "bytes": 11895,
+    "sha256": "2b84d018e593ce955144aaa8e709b4d632f5c331428c400290c4b69398b62582"
+  },
+  {
+    "file": "practice/02-enemies-practice.ent",
+    "bytes": 3916671,
+    "sha256": "e48fe67beab4bc8b20c4ee66f405b666c145ebd7bf3c31253ec74cf197448c2c"
+  },
+  {
+    "file": "practice/02-enemies-practice.json",
+    "bytes": 16837,
+    "sha256": "e4f126d2a3ee8a2fc28ef629d6fa040e7761b5ba1eca163559d2e99f004aa4f4"
+  },
+  {
+    "file": "practice/03-health-practice.ent",
+    "bytes": 3917175,
+    "sha256": "33c8ed91e645e832601694c3afb8e0265635a33c8a4cd625de74f24279324ec4"
+  },
+  {
+    "file": "practice/03-health-practice.json",
+    "bytes": 20975,
+    "sha256": "ad519eeca492c42b1ad25c999d0c1983d4ffb87e5b561430a2da550ce54320eb"
+  },
+  {
+    "file": "practice/04-attack-practice.ent",
+    "bytes": 3917503,
+    "sha256": "43896a9e8bae6e0d805af0718edef3d498e4e5baafecccff52c37a0d7b7455b8"
+  },
+  {
+    "file": "practice/04-attack-practice.json",
+    "bytes": 24425,
+    "sha256": "af2661f6701b46c92f26cb41b9772208478b441ef38b624f16f4ee05cbbacdd8"
+  },
+  {
+    "file": "practice/05-survivor-practice.ent",
+    "bytes": 3917605,
+    "sha256": "6314e00747254bee754b3f447131f17687fdb339fa758b215bdb875c7d93f633"
+  },
+  {
+    "file": "practice/05-survivor-practice.json",
+    "bytes": 25700,
+    "sha256": "fccfb1de6e0525c7f524319b509f5dafeac1436ed48011366cb3098c8097d8ee"
+  },
+  {
+    "file": "practice/06-projectiles-practice.ent",
+    "bytes": 3563500,
+    "sha256": "55d8d13e883767462953d16aa7d71ccd1edfbb562d4bb0750e39770afacdd9ff"
+  },
+  {
+    "file": "practice/06-projectiles-practice.json",
+    "bytes": 43644,
+    "sha256": "c0932db09149b2915f4f86f31aca2ff68161875e0437960de0be737b1475a3fa"
+  },
+  {
+    "file": "practice/07-experience-practice.ent",
+    "bytes": 3910380,
+    "sha256": "927bc17a0b33e953084da7670cd21d581f099cdb80fb11ad2343a3dba926bcb9"
+  },
+  {
+    "file": "practice/07-experience-practice.json",
+    "bytes": 48409,
+    "sha256": "2d614f84419143229d1b1ede6e4e9d6bb4d621ed4982f9834d51257a561c673a"
+  },
+  {
+    "file": "practice/08-upgrades-practice.ent",
+    "bytes": 3911043,
+    "sha256": "792585f206e2e6eafd3e45bb9046cd73792b702fe86eabd4aa8ce0f9608c8fc1"
+  },
+  {
+    "file": "practice/08-upgrades-practice.json",
+    "bytes": 53292,
+    "sha256": "be71a82d716b647c048fe14f2150998070229ee07a8124df76e7780f3ad4aab6"
+  }
+]

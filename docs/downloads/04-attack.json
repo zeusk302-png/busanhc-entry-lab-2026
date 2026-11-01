@@ -1,0 +1,350 @@
+{
+  "name": "04 자동 공격과 처치 수",
+  "scenes": [
+    {
+      "id": "scene1",
+      "name": "생존 게임"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player",
+      "name": "플레이어",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000490\", \"x\": 30, \"y\": 30}, {\"params\": [{\"id\": \"b000467\", \"type\": \"number\", \"params\": [\"0\"]}, {\"id\": \"b000468\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"locate_xy\", \"id\": \"b000469\"}, {\"params\": [null], \"type\": \"show\", \"id\": \"b000470\"}, {\"params\": [null], \"type\": \"erase_all_effects\", \"id\": \"b000471\"}, {\"params\": [\"running\", {\"id\": \"b000472\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"set_variable\", \"id\": \"b000473\"}, {\"params\": [\"hp\", {\"id\": \"b000474\", \"type\": \"number\", \"params\": [\"3\"]}, null], \"type\": \"set_variable\", \"id\": \"b000475\"}, {\"params\": [\"score\", {\"id\": \"b000476\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000477\"}, {\"params\": [\"time\", {\"id\": \"b000478\", \"type\": \"number\", \"params\": [\"60\"]}, null], \"type\": \"set_variable\", \"id\": \"b000479\"}, {\"params\": [\"invul\", {\"id\": \"b000480\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000481\"}, {\"params\": [\"pulse\", {\"id\": \"b000482\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000483\"}, {\"params\": [\"enemycount\", {\"id\": \"b000484\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000485\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b000486\"}, \"EQUAL\", {\"id\": \"b000487\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000488\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b000489\", \"statements\": [[{\"params\": [{\"params\": [\"39\", null], \"type\": \"is_press_some_key\", \"id\": \"b000427\"}, null], \"type\": \"_if\", \"id\": \"b000430\", \"statements\": [[{\"params\": [{\"id\": \"b000428\", \"type\": \"number\", \"params\": [\"2.5\"]}, null], \"type\": \"move_x\", \"id\": \"b000429\"}]]}, {\"params\": [{\"params\": [\"37\", null], \"type\": \"is_press_some_key\", \"id\": \"b000431\"}, null], \"type\": \"_if\", \"id\": \"b000434\", \"statements\": [[{\"params\": [{\"id\": \"b000432\", \"type\": \"number\", \"params\": [\"-2.5\"]}, null], \"type\": \"move_x\", \"id\": \"b000433\"}]]}, {\"params\": [{\"params\": [\"38\", null], \"type\": \"is_press_some_key\", \"id\": \"b000435\"}, null], \"type\": \"_if\", \"id\": \"b000438\", \"statements\": [[{\"params\": [{\"id\": \"b000436\", \"type\": \"number\", \"params\": [\"2.5\"]}, null], \"type\": \"move_y\", \"id\": \"b000437\"}]]}, {\"params\": [{\"params\": [\"40\", null], \"type\": \"is_press_some_key\", \"id\": \"b000439\"}, null], \"type\": \"_if\", \"id\": \"b000442\", \"statements\": [[{\"params\": [{\"id\": \"b000440\", \"type\": \"number\", \"params\": [\"-2.5\"]}, null], \"type\": \"move_y\", \"id\": \"b000441\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"x\"], \"type\": \"coordinate_object\", \"id\": \"b000443\"}, \"LESS\", {\"id\": \"b000444\", \"type\": \"number\", \"params\": [\"-216\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000445\"}, null], \"type\": \"_if\", \"id\": \"b000448\", \"statements\": [[{\"params\": [{\"id\": \"b000446\", \"type\": \"number\", \"params\": [\"-216\"]}, null], \"type\": \"locate_x\", \"id\": \"b000447\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"x\"], \"type\": \"coordinate_object\", \"id\": \"b000449\"}, \"GREATER\", {\"id\": \"b000450\", \"type\": \"number\", \"params\": [\"216\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000451\"}, null], \"type\": \"_if\", \"id\": \"b000454\", \"statements\": [[{\"params\": [{\"id\": \"b000452\", \"type\": \"number\", \"params\": [\"216\"]}, null], \"type\": \"locate_x\", \"id\": \"b000453\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"y\"], \"type\": \"coordinate_object\", \"id\": \"b000455\"}, \"LESS\", {\"id\": \"b000456\", \"type\": \"number\", \"params\": [\"-110\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000457\"}, null], \"type\": \"_if\", \"id\": \"b000460\", \"statements\": [[{\"params\": [{\"id\": \"b000458\", \"type\": \"number\", \"params\": [\"-110\"]}, null], \"type\": \"locate_y\", \"id\": \"b000459\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"self\", null, \"y\"], \"type\": \"coordinate_object\", \"id\": \"b000461\"}, \"GREATER\", {\"id\": \"b000462\", \"type\": \"number\", \"params\": [\"98\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000463\"}, null], \"type\": \"_if\", \"id\": \"b000466\", \"statements\": [[{\"params\": [{\"id\": \"b000464\", \"type\": \"number\", \"params\": [\"98\"]}, null], \"type\": \"locate_y\", \"id\": \"b000465\"}]]}]]}], [{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000508\", \"x\": 620, \"y\": 30}, {\"params\": [{\"id\": \"b000491\", \"type\": \"number\", \"params\": [\"0.05\"]}, null], \"type\": \"wait_second\", \"id\": \"b000492\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b000504\"}, \"EQUAL\", {\"id\": \"b000505\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000506\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b000507\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [\"invul\"], \"type\": \"get_variable\", \"id\": \"b000493\"}, \"EQUAL\", {\"id\": \"b000494\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000495\"}, null], \"type\": \"_if\", \"id\": \"b000503\", \"statements\": [[{\"params\": [\"transparency\", {\"id\": \"b000496\", \"type\": \"number\", \"params\": [\"55\"]}, null], \"type\": \"change_effect_amount\", \"id\": \"b000497\"}, {\"params\": [{\"id\": \"b000498\", \"type\": \"number\", \"params\": [\"0.8\"]}, null], \"type\": \"wait_second\", \"id\": \"b000499\"}, {\"params\": [null], \"type\": \"erase_all_effects\", \"id\": \"b000500\"}, {\"params\": [\"invul\", {\"id\": \"b000501\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000502\"}]]}]]}], [{\"params\": [null, \"end\"], \"type\": \"when_message_cast\", \"id\": \"b000522\", \"x\": 620, \"y\": 410}, {\"params\": [\"running\", {\"id\": \"b000509\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000510\"}, {\"params\": [{\"params\": [{\"params\": [\"hp\"], \"type\": \"get_variable\", \"id\": \"b000511\"}, \"LESS_OR_EQUAL\", {\"id\": \"b000512\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000513\"}, null], \"type\": \"if_else\", \"id\": \"b000518\", \"statements\": [[{\"params\": [{\"id\": \"b000514\", \"type\": \"text\", \"params\": [\"다시 도전! 정지한 뒤 시작 버튼을 눌러요.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000515\"}], [{\"params\": [{\"id\": \"b000516\", \"type\": \"text\", \"params\": [\"60초 생존 성공! 정지한 뒤 다시 시작할 수 있어요.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000517\"}]]}, {\"params\": [{\"id\": \"b000519\", \"type\": \"number\", \"params\": [\"0.1\"]}, null], \"type\": \"wait_second\", \"id\": \"b000520\"}, {\"params\": [\"all\", null], \"type\": \"stop_object\", \"id\": \"b000521\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "playerpic",
+            "name": "플레이어",
+            "filename": "player",
+            "fileurl": "temp/assets/player.png",
+            "thumbUrl": "temp/assets/player.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "playerpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.03827751196172249,
+        "scaleY": 0.03827751196172249,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": true
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "enemy",
+      "name": "적",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000539\", \"x\": 30, \"y\": 30}, {\"params\": [null], \"type\": \"hide\", \"id\": \"b000523\"}, {\"params\": [{\"id\": \"b000524\", \"type\": \"number\", \"params\": [\"0.15\"]}, null], \"type\": \"wait_second\", \"id\": \"b000525\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b000535\"}, \"EQUAL\", {\"id\": \"b000536\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000537\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b000538\", \"statements\": [[{\"params\": [{\"params\": [{\"params\": [\"enemycount\"], \"type\": \"get_variable\", \"id\": \"b000526\"}, \"LESS\", {\"id\": \"b000527\", \"type\": \"number\", \"params\": [\"50\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000528\"}, null], \"type\": \"_if\", \"id\": \"b000532\", \"statements\": [[{\"params\": [\"self\", null], \"type\": \"create_clone\", \"id\": \"b000529\"}, {\"params\": [\"enemycount\", {\"id\": \"b000530\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"change_variable\", \"id\": \"b000531\"}]]}, {\"params\": [{\"id\": \"b000533\", \"type\": \"number\", \"params\": [\"0.85\"]}, null], \"type\": \"wait_second\", \"id\": \"b000534\"}]]}], [{\"params\": [null], \"type\": \"when_clone_start\", \"id\": \"b000622\", \"x\": 400, \"y\": 30}, {\"params\": [\"side\", {\"params\": [null, {\"id\": \"b000540\", \"type\": \"number\", \"params\": [\"0\"]}, null, {\"id\": \"b000541\", \"type\": \"number\", \"params\": [\"3\"]}, null], \"type\": \"calc_rand\", \"id\": \"b000542\"}, null], \"type\": \"set_variable\", \"id\": \"b000543\"}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b000544\"}, \"EQUAL\", {\"id\": \"b000545\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000546\"}, null], \"type\": \"_if\", \"id\": \"b000552\", \"statements\": [[{\"params\": [{\"params\": [null, {\"id\": \"b000547\", \"type\": \"number\", \"params\": [\"-215\"]}, null, {\"id\": \"b000548\", \"type\": \"number\", \"params\": [\"215\"]}, null], \"type\": \"calc_rand\", \"id\": \"b000549\"}, {\"id\": \"b000550\", \"type\": \"number\", \"params\": [\"124\"]}, null], \"type\": \"locate_xy\", \"id\": \"b000551\"}]]}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b000553\"}, \"EQUAL\", {\"id\": \"b000554\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000555\"}, null], \"type\": \"_if\", \"id\": \"b000561\", \"statements\": [[{\"params\": [{\"params\": [null, {\"id\": \"b000556\", \"type\": \"number\", \"params\": [\"-215\"]}, null, {\"id\": \"b000557\", \"type\": \"number\", \"params\": [\"215\"]}, null], \"type\": \"calc_rand\", \"id\": \"b000558\"}, {\"id\": \"b000559\", \"type\": \"number\", \"params\": [\"-124\"]}, null], \"type\": \"locate_xy\", \"id\": \"b000560\"}]]}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b000562\"}, \"EQUAL\", {\"id\": \"b000563\", \"type\": \"number\", \"params\": [\"2\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000564\"}, null], \"type\": \"_if\", \"id\": \"b000570\", \"statements\": [[{\"params\": [{\"id\": \"b000568\", \"type\": \"number\", \"params\": [\"-230\"]}, {\"params\": [null, {\"id\": \"b000565\", \"type\": \"number\", \"params\": [\"-105\"]}, null, {\"id\": \"b000566\", \"type\": \"number\", \"params\": [\"105\"]}, null], \"type\": \"calc_rand\", \"id\": \"b000567\"}, null], \"type\": \"locate_xy\", \"id\": \"b000569\"}]]}, {\"params\": [{\"params\": [{\"params\": [\"side\"], \"type\": \"get_variable\", \"id\": \"b000571\"}, \"EQUAL\", {\"id\": \"b000572\", \"type\": \"number\", \"params\": [\"3\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000573\"}, null], \"type\": \"_if\", \"id\": \"b000579\", \"statements\": [[{\"params\": [{\"id\": \"b000577\", \"type\": \"number\", \"params\": [\"230\"]}, {\"params\": [null, {\"id\": \"b000574\", \"type\": \"number\", \"params\": [\"-105\"]}, null, {\"id\": \"b000575\", \"type\": \"number\", \"params\": [\"105\"]}, null], \"type\": \"calc_rand\", \"id\": \"b000576\"}, null], \"type\": \"locate_xy\", \"id\": \"b000578\"}]]}, {\"params\": [null], \"type\": \"show\", \"id\": \"b000580\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b000617\"}, \"EQUAL\", {\"id\": \"b000618\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000619\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b000620\", \"statements\": [[{\"params\": [\"player\", null], \"type\": \"see_angle_object\", \"id\": \"b000581\"}, {\"params\": [{\"id\": \"b000582\", \"type\": \"number\", \"params\": [\"0.8\"]}, null], \"type\": \"move_direction\", \"id\": \"b000583\"}, {\"params\": [{\"params\": [{\"params\": [{\"params\": [\"pulse\"], \"type\": \"get_variable\", \"id\": \"b000584\"}, \"EQUAL\", {\"id\": \"b000585\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000586\"}, \"AND\", {\"params\": [{\"params\": [null, \"player\", null], \"type\": \"distance_something\", \"id\": \"b000587\"}, \"LESS\", {\"id\": \"b000588\", \"type\": \"number\", \"params\": [\"52\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000589\"}], \"type\": \"boolean_and_or\", \"id\": \"b000590\"}, null], \"type\": \"_if\", \"id\": \"b000596\", \"statements\": [[{\"params\": [\"score\", {\"id\": \"b000591\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"change_variable\", \"id\": \"b000592\"}, {\"params\": [\"enemycount\", {\"id\": \"b000593\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"change_variable\", \"id\": \"b000594\"}, {\"params\": [null], \"type\": \"delete_clone\", \"id\": \"b000595\"}]]}, {\"params\": [{\"params\": [{\"params\": [null, \"player\", null], \"type\": \"reach_something\", \"id\": \"b000597\"}, \"AND\", {\"params\": [{\"params\": [\"invul\"], \"type\": \"get_variable\", \"id\": \"b000598\"}, \"EQUAL\", {\"id\": \"b000599\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000600\"}], \"type\": \"boolean_and_or\", \"id\": \"b000601\"}, null], \"type\": \"_if\", \"id\": \"b000616\", \"statements\": [[{\"params\": [\"invul\", {\"id\": \"b000602\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"set_variable\", \"id\": \"b000603\"}, {\"params\": [\"hp\", {\"id\": \"b000604\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"change_variable\", \"id\": \"b000605\"}, {\"params\": [\"enemycount\", {\"id\": \"b000606\", \"type\": \"number\", \"params\": [\"-1\"]}, null], \"type\": \"change_variable\", \"id\": \"b000607\"}, {\"params\": [{\"params\": [{\"params\": [\"hp\"], \"type\": \"get_variable\", \"id\": \"b000608\"}, \"LESS_OR_EQUAL\", {\"id\": \"b000609\", \"type\": \"number\", \"params\": [\"0\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000610\"}, null], \"type\": \"_if\", \"id\": \"b000614\", \"statements\": [[{\"params\": [\"running\", {\"id\": \"b000611\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000612\"}, {\"params\": [\"end\", null], \"type\": \"message_cast\", \"id\": \"b000613\"}]]}, {\"params\": [null], \"type\": \"delete_clone\", \"id\": \"b000615\"}]]}]]}, {\"params\": [null], \"type\": \"delete_clone\", \"id\": \"b000621\"}], [{\"params\": [null, \"end\"], \"type\": \"when_message_cast\", \"id\": \"b000624\", \"x\": 400, \"y\": 850}, {\"params\": [null], \"type\": \"remove_all_clones\", \"id\": \"b000623\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "enemypic",
+            "name": "적",
+            "filename": "enemy",
+            "fileurl": "temp/assets/enemy.png",
+            "thumbUrl": "temp/assets/enemy.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "enemypic",
+      "entity": {
+        "x": 120,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.0342902711323764,
+        "scaleY": 0.0342902711323764,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": false
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "aura",
+      "name": "자동 공격 범위",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000633\", \"x\": 30, \"y\": 30}, {\"params\": [null], \"type\": \"hide\", \"id\": \"b000625\"}, {\"params\": [{\"id\": \"b000626\", \"type\": \"number\", \"params\": [\"0.05\"]}, null], \"type\": \"wait_second\", \"id\": \"b000627\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b000629\"}, \"EQUAL\", {\"id\": \"b000630\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000631\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b000632\", \"statements\": [[{\"params\": [\"player\", null], \"type\": \"locate\", \"id\": \"b000628\"}]]}], [{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000650\", \"x\": 400, \"y\": 30}, {\"params\": [{\"id\": \"b000634\", \"type\": \"number\", \"params\": [\"0.3\"]}, null], \"type\": \"wait_second\", \"id\": \"b000635\"}, {\"params\": [{\"params\": [{\"params\": [\"running\"], \"type\": \"get_variable\", \"id\": \"b000646\"}, \"EQUAL\", {\"id\": \"b000647\", \"type\": \"number\", \"params\": [\"1\"]}], \"type\": \"boolean_basic_operator\", \"id\": \"b000648\"}, \"while\", null], \"type\": \"repeat_while_true\", \"id\": \"b000649\", \"statements\": [[{\"params\": [\"pulse\", {\"id\": \"b000636\", \"type\": \"number\", \"params\": [\"1\"]}, null], \"type\": \"set_variable\", \"id\": \"b000637\"}, {\"params\": [null], \"type\": \"show\", \"id\": \"b000638\"}, {\"params\": [{\"id\": \"b000639\", \"type\": \"number\", \"params\": [\"0.18\"]}, null], \"type\": \"wait_second\", \"id\": \"b000640\"}, {\"params\": [null], \"type\": \"hide\", \"id\": \"b000641\"}, {\"params\": [\"pulse\", {\"id\": \"b000642\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"set_variable\", \"id\": \"b000643\"}, {\"params\": [{\"id\": \"b000644\", \"type\": \"number\", \"params\": [\"1.02\"]}, null], \"type\": \"wait_second\", \"id\": \"b000645\"}]]}], [{\"params\": [null, \"end\"], \"type\": \"when_message_cast\", \"id\": \"b000652\", \"x\": 400, \"y\": 380}, {\"params\": [null], \"type\": \"hide\", \"id\": \"b000651\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "aurapic",
+            "name": "자동 공격 범위",
+            "filename": "aura",
+            "fileurl": "temp/assets/aura.svg",
+            "thumbUrl": "temp/assets/aura.svg",
+            "imageType": "svg",
+            "dimension": {
+              "width": 128,
+              "height": 128
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "aurapic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 64.0,
+        "regY": 64.0,
+        "scaleX": 0.8125,
+        "scaleY": 0.8125,
+        "rotation": 0,
+        "direction": 90,
+        "width": 128,
+        "height": 128,
+        "visible": false
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "crystal",
+      "name": "크리스털 소재",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000654\", \"x\": 30, \"y\": 30}, {\"params\": [null], \"type\": \"hide\", \"id\": \"b000653\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "crystalpic",
+            "name": "크리스털 소재",
+            "filename": "crystal",
+            "fileurl": "temp/assets/crystal.png",
+            "thumbUrl": "temp/assets/crystal.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "crystalpic",
+      "entity": {
+        "x": -115,
+        "y": -30,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.022328548644338118,
+        "scaleY": 0.022328548644338118,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": false
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "arena",
+      "name": "배경",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "arenapic",
+            "name": "배경",
+            "filename": "arena",
+            "fileurl": "temp/assets/arena.png",
+            "thumbUrl": "temp/assets/arena.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1672,
+              "height": 941
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "arenapic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 836.0,
+        "regY": 470.5,
+        "scaleX": 0.28708133971291866,
+        "scaleY": 0.2869287991498406,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1672,
+        "height": 941,
+        "visible": true
+      },
+      "lock": true,
+      "active": true
+    }
+  ],
+  "variables": [
+    {
+      "id": "hp",
+      "name": "체력",
+      "value": "3",
+      "variableType": "variable",
+      "visible": true,
+      "x": -225,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "time",
+      "name": "남은 시간",
+      "value": "60",
+      "variableType": "variable",
+      "visible": false,
+      "x": -75,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "score",
+      "name": "처치 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": true,
+      "x": 85,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "running",
+      "name": "게임 중",
+      "value": "1",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "invul",
+      "name": "무적 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "pulse",
+      "name": "공격 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "enemycount",
+      "name": "적 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "side",
+      "name": "등장 방향",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": "enemy",
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "timer",
+      "name": "초시계",
+      "value": "0",
+      "variableType": "timer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "answer",
+      "name": "대답",
+      "value": "0",
+      "variableType": "answer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    }
+  ],
+  "messages": [
+    {
+      "id": "end",
+      "name": "게임 종료"
+    }
+  ],
+  "functions": [],
+  "tables": [],
+  "speed": 60,
+  "expansionBlocks": [],
+  "aiUtilizeBlocks": [],
+  "hardwareLiteBlocks": []
+}

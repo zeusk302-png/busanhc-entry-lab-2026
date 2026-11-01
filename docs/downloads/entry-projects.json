@@ -1,0 +1,56 @@
+[
+  {
+    "stage": 0,
+    "file": "00-starter.ent",
+    "objects": 5,
+    "bytes": 3915574
+  },
+  {
+    "stage": 1,
+    "file": "01-movement.ent",
+    "objects": 5,
+    "bytes": 3916239
+  },
+  {
+    "stage": 2,
+    "file": "02-enemies.ent",
+    "objects": 5,
+    "bytes": 3916758
+  },
+  {
+    "stage": 3,
+    "file": "03-health.ent",
+    "objects": 5,
+    "bytes": 3917279
+  },
+  {
+    "stage": 4,
+    "file": "04-attack.ent",
+    "objects": 5,
+    "bytes": 3917565
+  },
+  {
+    "stage": 5,
+    "file": "05-survivor.ent",
+    "objects": 5,
+    "bytes": 3917711
+  },
+  {
+    "stage": 6,
+    "file": "06-projectiles.ent",
+    "objects": 5,
+    "bytes": 3563728
+  },
+  {
+    "stage": 7,
+    "file": "07-experience.ent",
+    "objects": 5,
+    "bytes": 3910439
+  },
+  {
+    "stage": 8,
+    "file": "08-upgrades.ent",
+    "objects": 6,
+    "bytes": 3911416
+  }
+]

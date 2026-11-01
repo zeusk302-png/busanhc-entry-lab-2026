@@ -1,0 +1,186 @@
+{
+  "name": "선택하는 짧은 이야기",
+  "scenes": [
+    {
+      "id": "scene1",
+      "name": "생존 게임"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player",
+      "name": "플레이어",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000018\", \"x\": 30, \"y\": 30}, {\"params\": [{\"id\": \"b000016\", \"type\": \"text\", \"params\": [\"숲의 갈림길. 밝은 길은 1, 신비한 길은 2!\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000017\"}], [{\"params\": [null, \"49\"], \"type\": \"when_some_key_pressed\", \"id\": \"b000025\", \"x\": 400, \"y\": 30}, {\"params\": [{\"id\": \"b000019\", \"type\": \"text\", \"params\": [\"밝은 길에서 친구를 만났어요.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000020\"}, {\"params\": [{\"id\": \"b000021\", \"type\": \"number\", \"params\": [\"2\"]}, null], \"type\": \"wait_second\", \"id\": \"b000022\"}, {\"params\": [{\"id\": \"b000023\", \"type\": \"text\", \"params\": [\"함께 집으로 돌아왔어요. 끝!\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000024\"}], [{\"params\": [null, \"50\"], \"type\": \"when_some_key_pressed\", \"id\": \"b000032\", \"x\": 800, \"y\": 30}, {\"params\": [{\"id\": \"b000026\", \"type\": \"text\", \"params\": [\"신비한 길에서 반짝이는 돌을 찾았어요.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000027\"}, {\"params\": [{\"id\": \"b000028\", \"type\": \"number\", \"params\": [\"2\"]}, null], \"type\": \"wait_second\", \"id\": \"b000029\"}, {\"params\": [{\"id\": \"b000030\", \"type\": \"text\", \"params\": [\"새로운 모험의 시작! 끝.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000031\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "playerpic",
+            "name": "플레이어",
+            "filename": "player",
+            "fileurl": "temp/assets/player.png",
+            "thumbUrl": "temp/assets/player.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "playerpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.03827751196172249,
+        "scaleY": 0.03827751196172249,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": true
+      },
+      "lock": false,
+      "active": true
+    }
+  ],
+  "variables": [
+    {
+      "id": "hp",
+      "name": "체력",
+      "value": "3",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "time",
+      "name": "남은 시간",
+      "value": "60",
+      "variableType": "variable",
+      "visible": false,
+      "x": -75,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "score",
+      "name": "처치 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": 85,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "running",
+      "name": "게임 중",
+      "value": "1",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "invul",
+      "name": "무적 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "pulse",
+      "name": "공격 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "enemycount",
+      "name": "적 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "side",
+      "name": "등장 방향",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": "enemy",
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "timer",
+      "name": "초시계",
+      "value": "0",
+      "variableType": "timer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "answer",
+      "name": "대답",
+      "value": "0",
+      "variableType": "answer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    }
+  ],
+  "messages": [
+    {
+      "id": "end",
+      "name": "발표 끝"
+    }
+  ],
+  "functions": [],
+  "tables": [],
+  "speed": 60,
+  "expansionBlocks": [],
+  "aiUtilizeBlocks": [],
+  "hardwareLiteBlocks": []
+}

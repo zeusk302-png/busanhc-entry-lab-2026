@@ -7,6 +7,17 @@
   practice.checked=new URLSearchParams(location.search).get('practice')==='1';
   const fileInput=document.getElementById('local-project');
   const artworkInput=document.getElementById('local-artwork');
+  const soundInput=document.getElementById('local-sound');
+  async function addLocalSound(file){
+    if(!ready||!Entry.playground.object)throw new Error('소리를 넣을 오브젝트를 먼저 선택하세요.');
+    if(file.size>10*1024*1024||!/\.(mp3|wav)$/i.test(file.name))throw new Error('10MB 이하 MP3 또는 WAV 파일을 선택하세요.');
+    const url=URL.createObjectURL(file);objectUrls.push(url);
+    const duration=await new Promise((resolve,reject)=>{const audio=new Audio();audio.onloadedmetadata=()=>Number.isFinite(audio.duration)&&audio.duration>0?resolve(audio.duration):reject(new Error('소리 길이를 읽을 수 없습니다.'));audio.onerror=()=>reject(new Error('지원되는 MP3/WAV인지 확인하세요.'));audio.src=url;});
+    Entry.playground.addSound({id:Entry.generateHash(),name:file.name.replace(/\.[^.]+$/,''),fileurl:url,ext:/\.wav$/i.test(file.name)?'.wav':'.mp3',duration},false,true,true);
+    message('선택한 오브젝트에 소리를 넣었습니다. 소리 블록에서 이름을 고르고 .ent로 저장하세요.');
+  }
+  soundInput.addEventListener('change',async()=>{try{if(soundInput.files[0])await addLocalSound(soundInput.files[0]);}catch(e){message(e.message,true);}finally{soundInput.value='';}});
+  document.getElementById('add-demo-sound').addEventListener('click',async()=>{try{const blob=await(await fetch('assets/audio/level-up.wav')).blob();await addLocalSound(new File([blob],'레벨업.wav',{type:'audio/wav'}));}catch(e){message(e.message,true);}});
   let currentName='나의 생존 게임', ready=false, objectUrls=[], artworkMode='object';
   const encoder=new TextEncoder(), decoder=new TextDecoder();
   const message=(text,error=false)=>{status.textContent=text;status.classList.toggle('error',error);};
@@ -75,7 +86,7 @@
     }
     return files;
   }
-  function mediaType(name){return /\.svg$/i.test(name)?'image/svg+xml':/\.png$/i.test(name)?'image/png':/\.jpe?g$/i.test(name)?'image/jpeg':/\.mp3$/i.test(name)?'audio/mpeg':'application/octet-stream';}
+  function mediaType(name){return /\.svg$/i.test(name)?'image/svg+xml':/\.png$/i.test(name)?'image/png':/\.jpe?g$/i.test(name)?'image/jpeg':/\.mp3$/i.test(name)?'audio/mpeg':/\.wav$/i.test(name)?'audio/wav':'application/octet-stream';}
   async function imageModel(file){
     const url=URL.createObjectURL(file);objectUrls.push(url);
     const image=await new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=()=>reject(new Error('이미지 파일을 읽을 수 없습니다.'));image.src=url;});
@@ -135,7 +146,7 @@
         const fallback='temp/'+filename.slice(0,2)+'/'+filename.slice(2,4)+'/image/'+filename+'.png';
         picture.fileurl=makeUrl(picture.fileurl||fallback);picture.thumbUrl=picture.fileurl;
       }
-      for(const sound of object.sprite?.sounds||[])sound.fileurl=makeUrl(sound.fileurl);
+      for(const sound of object.sprite?.sounds||[]){const name=sound.filename||'';sound.fileurl=makeUrl(sound.fileurl||'temp/'+name.slice(0,2)+'/'+name.slice(2,4)+'/sound/'+name+(sound.ext||'.mp3'));delete sound.path;}
     }
     return project;
   }
@@ -228,7 +239,8 @@
         const url=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(blob);});
         picture.fileurl=url;picture.thumbUrl=url;
       }
-      save(JSON.stringify(project,null,2),safeName(currentName)+'.json','application/json');message('이미지가 포함된 JSON 백업을 저장했습니다. 이 편집기의 내 파일 열기로 복원하세요.');
+      for(const object of project.objects||[])for(const sound of object.sprite?.sounds||[]){const blob=await(await fetch(sound.fileurl||sound.path)).blob();sound.fileurl=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(blob);});delete sound.path;}
+      save(JSON.stringify(project,null,2),safeName(currentName)+'.json','application/json');message('이미지와 소리가 포함된 JSON 백업을 저장했습니다. 이 편집기의 내 파일 열기로 복원하세요.');
     }catch(error){console.error(error);message(error.message,true);}finally{busy(false);}
   });
   async function boot(){
@@ -247,7 +259,7 @@
       Entry.addEventListener('openPictureManager',()=>openArtwork('picture'));
       Entry.addEventListener('openPictureImport',()=>openArtwork('picture'));
       Entry.addEventListener('saveCanvasImage',savePaintedImage);
-      Entry.addEventListener('openSoundManager',()=>message('소리 자료 검색과 확장 도구는 공식 엔트리에서 이용해 주세요. 이 편집기는 게임 제작의 핵심 블록과 이미지 실습을 지원합니다.'));
+      Entry.addEventListener('openSoundManager',()=>soundInput.click());
       ready=true;
       const value=Number(new URLSearchParams(location.search).get('step')??8);
       stage.value=String(Number.isInteger(value)&&value>=0&&value<=8?value:8);

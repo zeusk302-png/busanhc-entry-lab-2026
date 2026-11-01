@@ -1,0 +1,186 @@
+{
+  "name": "두 선택 퀴즈",
+  "scenes": [
+    {
+      "id": "scene1",
+      "name": "생존 게임"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player",
+      "name": "플레이어",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000003\", \"x\": 30, \"y\": 30}, {\"params\": [{\"id\": \"b000001\", \"type\": \"text\", \"params\": [\"조건 블록은 언제 실행할지 정한다. 맞으면 1, 아니면 2!\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000002\"}], [{\"params\": [null, \"49\"], \"type\": \"when_some_key_pressed\", \"id\": \"b000009\", \"x\": 400, \"y\": 30}, {\"params\": [{\"id\": \"b000004\", \"type\": \"text\", \"params\": [\"정답! 조건이 참일 때 실행해요.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000005\"}, {\"params\": [{\"id\": \"b000006\", \"type\": \"number\", \"params\": [\"2\"]}, null], \"type\": \"wait_second\", \"id\": \"b000007\"}, {\"params\": [\"end\", null], \"type\": \"message_cast\", \"id\": \"b000008\"}], [{\"params\": [null, \"50\"], \"type\": \"when_some_key_pressed\", \"id\": \"b000012\", \"x\": 800, \"y\": 30}, {\"params\": [{\"id\": \"b000010\", \"type\": \"text\", \"params\": [\"힌트: 만일 블록 안의 조건을 확인해 봐요. 다시 선택!\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000011\"}], [{\"params\": [null, \"end\"], \"type\": \"when_message_cast\", \"id\": \"b000015\", \"x\": 400, \"y\": 30}, {\"params\": [{\"id\": \"b000013\", \"type\": \"text\", \"params\": [\"퀴즈 끝! 질문과 선택지를 내 주제로 바꿔 보세요.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000014\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "playerpic",
+            "name": "플레이어",
+            "filename": "player",
+            "fileurl": "temp/assets/player.png",
+            "thumbUrl": "temp/assets/player.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "playerpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.03827751196172249,
+        "scaleY": 0.03827751196172249,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": true
+      },
+      "lock": false,
+      "active": true
+    }
+  ],
+  "variables": [
+    {
+      "id": "hp",
+      "name": "체력",
+      "value": "3",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "time",
+      "name": "남은 시간",
+      "value": "60",
+      "variableType": "variable",
+      "visible": false,
+      "x": -75,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "score",
+      "name": "처치 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": 85,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "running",
+      "name": "게임 중",
+      "value": "1",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "invul",
+      "name": "무적 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "pulse",
+      "name": "공격 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "enemycount",
+      "name": "적 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "side",
+      "name": "등장 방향",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": "enemy",
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "timer",
+      "name": "초시계",
+      "value": "0",
+      "variableType": "timer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "answer",
+      "name": "대답",
+      "value": "0",
+      "variableType": "answer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    }
+  ],
+  "messages": [
+    {
+      "id": "end",
+      "name": "발표 끝"
+    }
+  ],
+  "functions": [],
+  "tables": [],
+  "speed": 60,
+  "expansionBlocks": [],
+  "aiUtilizeBlocks": [],
+  "hardwareLiteBlocks": []
+}

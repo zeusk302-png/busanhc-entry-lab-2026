@@ -1,0 +1,14 @@
+'use strict';
+window.Lab={
+ esc:s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),
+ download(name,text,type='text/plain;charset=utf-8'){const u=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),3000);},
+ links(){return Object.entries(CLASSROOM.courses).map(([k,v])=>`<a href="${v}">${{entry:'엔트리',health:'보건간호',food:'푸드디저트',it:'IT경영'}[k]}</a>`).join(' · ');},
+ submit(){return `<section class="section panel"><h2>저장 → 제출 → 전시</h2><ol class="numbered"><li>실명 대신 선생님이 정한 <b>학급 코드와 작품 코드</b>를 파일명에 씁니다.</li><li>기록 파일과 실제 결과물을 내려받고 다운로드 폴더에서 다시 열어 봅니다.</li><li><a href="${CLASSROOM.submission||'classroom.html'}" target="_blank" rel="noopener">작품 제출 접수 열기 ↗</a>에서 코드·과정·공유 링크 또는 기록을 보냅니다. 링크가 없으면 ‘파일 직접 전달’을 적고 파일은 선생님 PC로 전달합니다. <b>접수만으로 파일이 전송되지는 않습니다.</b></li><li>선생님이 파일을 수합·검토하고 대표작을 선택합니다. 개인정보와 계정 화면을 뺀 결과만 전시합니다.</li></ol><a href="classroom.html">파일 전달 방법·교사용 수합 화면 →</a></section>`;},
+ mount(title,nav,label='2학년 · 3교시 · 150분'){document.body.innerHTML=`<a class="skip" href="#main">본문으로 이동</a><header class="topbar"><a class="brand" href="#home"><img class="school-emblem" src="assets/brand/busanhc-emblem.gif" alt="부산보건고등학교 교표" width="44" height="44"><span>${title}<small>BUSAN HEALTH HIGH SCHOOL</small></span></a><span class="course-label">${label}</span></header><div class="layout"><aside class="sidebar"><nav aria-label="수업 목차">${nav.map(([id,t],n)=>`<a href="#${id}"><span>${String(n).padStart(2,'0')}</span>${t}</a>`).join('')}</nav><p class="source-link">${this.links()}</p><a class="source-link" href="classroom.html">제출·수합·전시 →</a><p class="hint">기록은 이 브라우저에 임시 저장됩니다. 파일도 저장하세요.</p></aside><main id="main" tabindex="-1"></main></div><footer class="footer">부산보건고 학생 실습 교재 · 11월 과정</footer><div class="toast" role="status" aria-live="polite"></div>`;},
+ toast(s){const el=document.querySelector('.toast');el.textContent=s;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2600);},
+ async copy(s){try{await navigator.clipboard.writeText(s);this.toast('복사했습니다. AI 입력창에 붙여 넣으세요.');}catch{this.download('프롬프트.txt',s);}},
+ heading(n,title,intro){return `<header class="page-title"><div class="eyebrow">STUDENT LAB / ${n}</div><h1>${title}</h1><p class="intro">${intro}</p></header>`;},
+ next(id,t){return `<div class="stage-nav"><a class="button" href="#${id}">${t} →</a></div>`;},
+ timeline(items){return `<ol class="numbered">${items.map(x=>`<li><b>${x.start}–${x.end}분</b> · ${this.esc(x.activity)}</li>`).join('')}</ol>`;},
+ capture(file,caption){return `<figure class="capture"><a href="${file}" target="_blank"><img src="${file}" alt="${this.esc(caption)}" loading="lazy"></a><figcaption>${this.esc(caption)} · 누르면 원본</figcaption></figure>`;}
+};

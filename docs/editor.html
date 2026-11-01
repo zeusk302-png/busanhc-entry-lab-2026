@@ -43,6 +43,8 @@
     <button id="save-json" type="button" disabled>JSON 백업</button>
     <input id="local-project" type="file" accept=".ent,.json" hidden>
     <input id="local-artwork" type="file" accept="image/png,image/jpeg,image/svg+xml" hidden>
+    <input id="local-sound" type="file" accept="audio/mpeg,audio/wav,.mp3,.wav" hidden>
+    <button id="add-demo-sound" type="button">짧은 효과음 넣기</button>
     <span id="editor-status" role="status" aria-live="polite">엔트리 편집기를 불러오는 중입니다…</span>
   </div>
   <dialog id="stage-confirm" aria-labelledby="stage-confirm-title"><h2 id="stage-confirm-title">지금 만든 작품을 저장했나요?</h2><p>선택한 단계의 <b>새 준비 파일</b>로 바뀝니다. 지금 만든 코드는 새 파일에 자동으로 합쳐지지 않습니다.</p><p>.ent 파일로 저장한 뒤 새 단계를 여세요.</p><div><button type="button" id="cancel-stage" autofocus>돌아가서 먼저 저장</button><button type="button" id="confirm-stage">저장했어요 · 새 준비 파일 열기</button></div></dialog>

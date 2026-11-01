@@ -1,0 +1,276 @@
+{
+  "name": "시작·게임·끝 세 장면",
+  "scenes": [
+    {
+      "id": "scene1",
+      "name": "시작 화면"
+    },
+    {
+      "id": "scene2",
+      "name": "게임 화면"
+    },
+    {
+      "id": "scene3",
+      "name": "끝 화면"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player",
+      "name": "시작 안내",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000329\", \"x\": 30, \"y\": 30}, {\"params\": [{\"id\": \"b000327\", \"type\": \"text\", \"params\": [\"1키로 시작! 게임 화면에서 방향키 이동, 2키로 끝내기.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000328\"}], [{\"params\": [null], \"type\": \"when_scene_start\", \"id\": \"b000332\", \"x\": 30, \"y\": 230}, {\"params\": [{\"id\": \"b000330\", \"type\": \"text\", \"params\": [\"1키로 시작! 게임 화면에서 방향키 이동, 2키로 끝내기.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000331\"}], [{\"params\": [null, \"49\"], \"type\": \"when_some_key_pressed\", \"id\": \"b000334\", \"x\": 30, \"y\": 430}, {\"params\": [\"scene2\", null], \"type\": \"start_scene\", \"id\": \"b000333\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "playerpic",
+            "name": "시작 안내",
+            "filename": "player",
+            "fileurl": "temp/assets/player.png",
+            "thumbUrl": "temp/assets/player.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "playerpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.07177033492822966,
+        "scaleY": 0.07177033492822966,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": true
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "gameplayer",
+      "name": "게임 주인공",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene2",
+      "script": "[[{\"params\": [null], \"type\": \"when_scene_start\", \"id\": \"b000357\", \"x\": 30, \"y\": 230}, {\"params\": [{\"id\": \"b000352\", \"type\": \"number\", \"params\": [\"0\"]}, {\"id\": \"b000353\", \"type\": \"number\", \"params\": [\"0\"]}, null], \"type\": \"locate_xy\", \"id\": \"b000354\"}, {\"params\": [{\"id\": \"b000355\", \"type\": \"text\", \"params\": [\"방향키로 이동! 2키로 끝내기.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000356\"}, {\"params\": [null], \"type\": \"repeat_inf\", \"id\": \"b000351\", \"statements\": [[{\"params\": [{\"params\": [\"39\", null], \"type\": \"is_press_some_key\", \"id\": \"b000335\"}, null], \"type\": \"_if\", \"id\": \"b000338\", \"statements\": [[{\"params\": [{\"id\": \"b000336\", \"type\": \"number\", \"params\": [\"3\"]}, null], \"type\": \"move_x\", \"id\": \"b000337\"}]]}, {\"params\": [{\"params\": [\"37\", null], \"type\": \"is_press_some_key\", \"id\": \"b000339\"}, null], \"type\": \"_if\", \"id\": \"b000342\", \"statements\": [[{\"params\": [{\"id\": \"b000340\", \"type\": \"number\", \"params\": [\"-3\"]}, null], \"type\": \"move_x\", \"id\": \"b000341\"}]]}, {\"params\": [{\"params\": [\"38\", null], \"type\": \"is_press_some_key\", \"id\": \"b000343\"}, null], \"type\": \"_if\", \"id\": \"b000346\", \"statements\": [[{\"params\": [{\"id\": \"b000344\", \"type\": \"number\", \"params\": [\"3\"]}, null], \"type\": \"move_y\", \"id\": \"b000345\"}]]}, {\"params\": [{\"params\": [\"40\", null], \"type\": \"is_press_some_key\", \"id\": \"b000347\"}, null], \"type\": \"_if\", \"id\": \"b000350\", \"statements\": [[{\"params\": [{\"id\": \"b000348\", \"type\": \"number\", \"params\": [\"-3\"]}, null], \"type\": \"move_y\", \"id\": \"b000349\"}]]}]]}], [{\"params\": [null, \"50\"], \"type\": \"when_some_key_pressed\", \"id\": \"b000359\", \"x\": 400, \"y\": 30}, {\"params\": [\"scene3\", null], \"type\": \"start_scene\", \"id\": \"b000358\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "gameplayerpic",
+            "name": "게임 주인공",
+            "filename": "player",
+            "fileurl": "temp/assets/player.png",
+            "thumbUrl": "temp/assets/player.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "gameplayerpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.07177033492822966,
+        "scaleY": 0.07177033492822966,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": true
+      },
+      "lock": false,
+      "active": true
+    },
+    {
+      "id": "endplayer",
+      "name": "끝 안내",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene3",
+      "script": "[[{\"params\": [null], \"type\": \"when_scene_start\", \"id\": \"b000362\", \"x\": 30, \"y\": 230}, {\"params\": [{\"id\": \"b000360\", \"type\": \"text\", \"params\": [\"게임 끝! 3키로 처음 화면으로 돌아가기.\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000361\"}], [{\"params\": [null, \"51\"], \"type\": \"when_some_key_pressed\", \"id\": \"b000364\", \"x\": 400, \"y\": 30}, {\"params\": [\"scene1\", null], \"type\": \"start_scene\", \"id\": \"b000363\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "endplayerpic",
+            "name": "끝 안내",
+            "filename": "player",
+            "fileurl": "temp/assets/player.png",
+            "thumbUrl": "temp/assets/player.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "endplayerpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.07177033492822966,
+        "scaleY": 0.07177033492822966,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": true
+      },
+      "lock": false,
+      "active": true
+    }
+  ],
+  "variables": [
+    {
+      "id": "hp",
+      "name": "체력",
+      "value": "3",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "time",
+      "name": "남은 시간",
+      "value": "60",
+      "variableType": "variable",
+      "visible": false,
+      "x": -75,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "score",
+      "name": "처치 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": 85,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "running",
+      "name": "게임 중",
+      "value": "1",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "invul",
+      "name": "무적 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "pulse",
+      "name": "공격 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "enemycount",
+      "name": "적 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "side",
+      "name": "등장 방향",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": "enemy",
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "timer",
+      "name": "초시계",
+      "value": "0",
+      "variableType": "timer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "answer",
+      "name": "대답",
+      "value": "0",
+      "variableType": "answer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    }
+  ],
+  "messages": [
+    {
+      "id": "end",
+      "name": "발표 끝"
+    }
+  ],
+  "functions": [],
+  "tables": [],
+  "speed": 60,
+  "expansionBlocks": [],
+  "aiUtilizeBlocks": [],
+  "hardwareLiteBlocks": []
+}

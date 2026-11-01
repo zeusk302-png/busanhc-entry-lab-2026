@@ -1,0 +1,186 @@
+{
+  "name": "키로 여는 나의 소개 · 시작",
+  "scenes": [
+    {
+      "id": "scene1",
+      "name": "생존 게임"
+    }
+  ],
+  "objects": [
+    {
+      "id": "player",
+      "name": "플레이어",
+      "objectType": "sprite",
+      "rotateMethod": "none",
+      "scene": "scene1",
+      "script": "[[{\"params\": [null], \"type\": \"when_run_button_click\", \"id\": \"b000035\", \"x\": 30, \"y\": 30}, {\"params\": [{\"id\": \"b000033\", \"type\": \"text\", \"params\": [\"1은 나의 관심사, 2는 내가 만들고 싶은 것, 3은 끝!\"]}, \"speak\", null], \"type\": \"dialog\", \"id\": \"b000034\"}]]",
+      "sprite": {
+        "pictures": [
+          {
+            "id": "playerpic",
+            "name": "플레이어",
+            "filename": "player",
+            "fileurl": "temp/assets/player.png",
+            "thumbUrl": "temp/assets/player.png",
+            "imageType": "png",
+            "dimension": {
+              "width": 1254,
+              "height": 1254
+            }
+          }
+        ],
+        "sounds": []
+      },
+      "selectedPictureId": "playerpic",
+      "entity": {
+        "x": 0,
+        "y": 0,
+        "regX": 627.0,
+        "regY": 627.0,
+        "scaleX": 0.03827751196172249,
+        "scaleY": 0.03827751196172249,
+        "rotation": 0,
+        "direction": 90,
+        "width": 1254,
+        "height": 1254,
+        "visible": true
+      },
+      "lock": false,
+      "active": true
+    }
+  ],
+  "variables": [
+    {
+      "id": "hp",
+      "name": "체력",
+      "value": "3",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "time",
+      "name": "남은 시간",
+      "value": "60",
+      "variableType": "variable",
+      "visible": false,
+      "x": -75,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "score",
+      "name": "처치 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": 85,
+      "y": 116,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "running",
+      "name": "게임 중",
+      "value": "1",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "invul",
+      "name": "무적 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "pulse",
+      "name": "공격 중",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "enemycount",
+      "name": "적 수",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "side",
+      "name": "등장 방향",
+      "value": "0",
+      "variableType": "variable",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": "enemy",
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "timer",
+      "name": "초시계",
+      "value": "0",
+      "variableType": "timer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    },
+    {
+      "id": "answer",
+      "name": "대답",
+      "value": "0",
+      "variableType": "answer",
+      "visible": false,
+      "x": -225,
+      "y": 115,
+      "object": null,
+      "isCloud": false,
+      "array": []
+    }
+  ],
+  "messages": [
+    {
+      "id": "end",
+      "name": "발표 끝"
+    }
+  ],
+  "functions": [],
+  "tables": [],
+  "speed": 60,
+  "expansionBlocks": [],
+  "aiUtilizeBlocks": [],
+  "hardwareLiteBlocks": []
+}
